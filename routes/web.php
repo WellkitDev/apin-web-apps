@@ -14,5 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('beranda.index');
+});
+
+//frontend Tentang
+Route::get('/tentang', function () {
+    return view('tentang.index');
+});
+Route::get('/tentang/program', function () {
+    return view('tentang.program');
+});
+Route::get('/tentang/program/detail', function () {
+    return view('tentang.program-detail');
+});
+Route::get('/tentang/layanan', function () {
+    return view('tentang.layanan');
+});
+Route::get('/tentang/layanan/detail', function () {
+    return view('tentang.layanan-detail');
+});
+
+//frontend Seminar
+Route::get('/seminar', function () {
+    return view('seminar.index');
+});
+Route::get('/seminar/arsip', function () {
+    return view('seminar.arsip');
 });
