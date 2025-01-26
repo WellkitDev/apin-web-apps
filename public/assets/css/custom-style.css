@@ -1,0 +1,40 @@
+.seminar-title h3 {
+    margin: 0 !important;
+}
+.seminar-title p {
+    margin-bottom: 0 !important;
+}
+.seminar-nav {
+    margin-top: 0.25rem !important;
+}
+.seminar-nav ul > .link > a {
+    padding: 10px 25px;
+    font-size: 16px;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.seminar-nav ul > .link > a:hover {
+    cursor: pointer;
+}
+
+.flex-columns ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-columns ul li {
+    margin-bottom: 10px;
+}
+
+.flex-columns ul li {
+    font-size: 1rem;
+}
+.flex-columns ul li + li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.flex-columns ul li + li::before {
+    width: 0 !important;
+    height: 0 !important;
+}

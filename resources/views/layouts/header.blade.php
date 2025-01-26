@@ -2,7 +2,7 @@
     <nav class="navigation navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-lg-3 col-md-3 col-6">
+                <div class="col-lg-2 col-md-3 col-6">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggler open-btn">
                             <span class="sr-only">Toggle navigation</span>
@@ -14,7 +14,7 @@
                                 alt="apin"></a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-2 col-1">
+                <div class="col-lg-8 col-md-2 col-1">
                     <div id="navbar" class="collapse navbar-collapse navigation-holder">
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav mb-2 mb-lg-0">
@@ -26,10 +26,10 @@
                                     <li><a href="{{ url('/tentang/layanan') }}">Layanan</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Seminar</a>
+                            <li><a href="{{ url('/seminar') }}">Seminar</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Jadwal</a></li>
-                                    <li><a href="#">Arsip</a></li>
+                                    <li><a href="{{ url('/seminar') }}">Jadwal</a></li>
+                                    <li><a href="{{ url('/seminar/arsip') }}">Arsip</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Blog</a>
@@ -103,7 +103,7 @@
                         </div><!-- /dl-menuwrapper -->
                     </div><!-- end of nav-collapse -->
                 </div>
-                <div class="col-lg-3 col-md-4 col-4">
+                <div class="col-lg-2 col-md-4 col-4">
                     <div class="header-right">
                         <div class="close-form">
                             <a class="theme-btn" href="#">Login</a>
