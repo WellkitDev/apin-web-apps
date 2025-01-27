@@ -69,3 +69,35 @@
         flex-basis: auto !important;
     }
 }
+/* color */
+.success {
+    background: #20c997 !important;
+}
+.danger {
+    background: #d87070 !important;
+}
+.primary {
+    background: #1534d0 !important;
+}
+
+.seminar-btn-grup a {
+    width: 50% !important;
+}
+.seminar-btn-grup a {
+    padding: 10px 25px;
+    font-size: 16px;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.seminar-btn-grup .theme-btn-s2 {
+    border-radius: 8px !important;
+    box-shadow: 0 0 0 0 !important;
+    border: 0 !important;
+}
+/* btn hover */
+.seminar-btn-grup .success:hover {
+    background: #15946e !important;
+}
+.seminar-btn-grup .primary:hover {
+    background: #112bad !important;
+}
