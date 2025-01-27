@@ -38,3 +38,34 @@
     width: 0 !important;
     height: 0 !important;
 }
+.seminar-single-info {
+    flex-basis: 45% !important;
+    /* padding-left: 40px !important;
+    padding-right: 0 !important; */
+}
+@media (max-width: 767px) {
+    .seminar-single-info {
+        flex-basis: 100% !important;
+    }
+}
+
+.seminar-single-detail {
+    max-width: 592.917px !important;
+    flex-basis: 60% !important;
+}
+
+@media (max-width: 767px) {
+    .seminar-single-detail {
+        flex-basis: 100% !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .seminar-single-info {
+        flex-basis: 100% !important;
+    }
+    .seminar-single-detail {
+        max-width: 100% !important;
+        flex-basis: auto !important;
+    }
+}

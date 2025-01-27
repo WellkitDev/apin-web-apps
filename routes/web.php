@@ -38,6 +38,9 @@ Route::get('/tentang/layanan/detail', function () {
 Route::get('/seminar', function () {
     return view('seminar.index');
 });
+Route::get('/seminar/detail', function () {
+    return view('seminar.detail-seminar');
+});
 Route::get('/seminar/arsip', function () {
     return view('seminar.arsip');
 });

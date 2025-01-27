@@ -35,7 +35,8 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="entry-details seminar-title mb-3">
-                            <h3 class="mb-2"><a href="blog-single.html">8 Mistakes Founders Make When Starting a
+                            <h3 class="mb-2"><a href="{{ url('/seminar/detail') }}">8 Mistakes Founders Make When Starting
+                                    a
                                     Business.</a></h3>
                             <p>Consulting is a great career path if you want to build a broad skill set that includes
                                 everything from critical thinking and strategic planning to communications. If you love
