@@ -32,10 +32,10 @@
                                     <li><a href="{{ url('/seminar/arsip') }}">Arsip</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Blog</a>
+                            <li><a href="{{ url('/blog/artikel') }}">Blog</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Artikel</a></li>
-                                    <li><a href="#">Berita</a></li>
+                                    <li><a href="{{ url('/blog/artikel') }}">Artikel</a></li>
+                                    <li><a href="{{ url('/blog/artikel') }}">Berita</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Gallery</a>

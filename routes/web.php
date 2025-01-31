@@ -44,3 +44,7 @@ Route::get('/seminar/detail', function () {
 Route::get('/seminar/arsip', function () {
     return view('seminar.arsip');
 });
+
+Route::get('/blog/artikel', function () {
+    return view('blog.artikel');
+});
