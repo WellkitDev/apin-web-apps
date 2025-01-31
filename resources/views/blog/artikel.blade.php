@@ -42,28 +42,9 @@
                             <a href="blog-single.html" class="read-more">READ MORE...</a>
                         </div>
                     </div>
-                    <div class="post format-standard">
-                        <div class="entry-meta">
-                            <ul>
-                                <li><i class="fi flaticon-user"></i> By <a href="#">Jenny Watson</a> </li>
-                                <li><i class="fi flaticon-comment-white-oval-bubble"></i> Comments 35 </li>
-                                <li><i class="fi flaticon-calendar"></i> 24 Jun 2021</li>
-                            </ul>
-                        </div>
-                        <div class="entry-details">
-                            <h3><a href="blog-single.html">Tips From Successful Small Business Owners</a></h3>
-                            <p>Consulting is a great career path if you want to build a broad skill set that includes everything from critical thinking and strategic planning to communications. If you love rising to a challenge.</p>
-                            <a href="blog-single.html" class="read-more">READ MORE...</a>
-                        </div>
-                    </div>
-                    
-                    <div class="post format-gallery">
+                    <div class="post format-standard-image">
                         <div class="entry-media">
-                            <div class="post-slider owl-carousel">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-4.jpg" alt>
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-5.jpg" alt>
-                            </div>
-
+                            <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-4.jpg" alt>
                         </div>
                         <div class="entry-meta">
                             <ul>
@@ -73,28 +54,7 @@
                             </ul>
                         </div>
                         <div class="entry-details">
-                            <h3><a href="blog-single.html">Worst Ways Small Businesses Waste Money on Marketing</a></h3>
-                            <p>Consulting is a great career path if you want to build a broad skill set that includes everything from critical thinking and strategic planning to communications. If you love rising to a challenge.</p>
-                            <a href="blog-single.html" class="read-more">READ MORE...</a>
-                        </div>
-                    </div>
-                    <div class="post format-video">
-                        <div class="entry-media video-holder">
-                            <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-6.jpg" alt>
-                            <a href="https://www.youtube.com/embed/7Jv48RQ_2gk" class="video-btn" data-type="iframe">
-                                <i class="fi flaticon-play"></i>
-                            </a>
-
-                        </div>
-                        <div class="entry-meta">
-                            <ul>
-                                <li><i class="fi flaticon-user"></i> By <a href="#">Jenny Watson</a> </li>
-                                <li><i class="fi flaticon-comment-white-oval-bubble"></i> Comments 35 </li>
-                                <li><i class="fi flaticon-calendar"></i> 24 Jun 2021</li>
-                            </ul>
-                        </div>
-                        <div class="entry-details">
-                            <h3><a href="blog-single.html">Why Choose Management Consulting?</a></h3>
+                            <h3><a href="blog-single.html">8 Mistakes Founders Make When Starting a Business.</a></h3>
                             <p>Consulting is a great career path if you want to build a broad skill set that includes everything from critical thinking and strategic planning to communications. If you love rising to a challenge.</p>
                             <a href="blog-single.html" class="read-more">READ MORE...</a>
                         </div>

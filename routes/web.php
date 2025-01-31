@@ -45,6 +45,16 @@ Route::get('/seminar/arsip', function () {
     return view('seminar.arsip');
 });
 
+//frontend Blog
 Route::get('/blog/artikel', function () {
     return view('blog.artikel');
+});
+Route::get('/blog/artikel/detail', function () {
+    return view('blog.artikel-details');
+});
+Route::get('/blog/gallery', function () {
+    return view('blog.gallery');
+});
+Route::get('/blog/gallery/detail', function () {
+    return view('blog.gallery-detail');
 });

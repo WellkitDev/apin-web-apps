@@ -35,15 +35,15 @@
                             <li><a href="{{ url('/blog/artikel') }}">Blog</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ url('/blog/artikel') }}">Artikel</a></li>
-                                    <li><a href="{{ url('/blog/artikel') }}">Berita</a></li>
+                                    <li><a href="{{ url('/blog/gallery') }}">Gallery</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Gallery</a>
+                            {{-- <li><a href="#">Gallery</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Seminar</a></li>
                                     <li><a href="#">Event</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li><a href="#">Kerjasama</a></li>
                             <li><a href="#">Jurnal</a></li>
                             <li><a href="#">Area Anggota</a></li>
