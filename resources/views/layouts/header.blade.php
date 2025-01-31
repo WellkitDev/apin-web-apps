@@ -44,7 +44,7 @@
                                     <li><a href="#">Event</a></li>
                                 </ul>
                             </li> --}}
-                            <li><a href="#">Kerjasama</a></li>
+                            <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
                             <li><a href="#">Jurnal</a></li>
                             <li><a href="#">Area Anggota</a></li>
                         </ul>

@@ -101,3 +101,11 @@
 .seminar-btn-grup .primary:hover {
     background: #112bad !important;
 }
+
+.association table>tbody>tr>td p{
+    margin-bottom: 0 !important;
+}
+.association-detail img {
+    width: 90px!important;
+    height: auto;
+}

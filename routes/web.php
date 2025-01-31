@@ -58,3 +58,11 @@ Route::get('/blog/gallery', function () {
 Route::get('/blog/gallery/detail', function () {
     return view('blog.gallery-detail');
 });
+
+//frontend Kerjasama
+Route::get('/kerjasama', function () {
+    return view('kerjasama.index');
+});
+Route::get('/kerjasama/detail', function () {
+    return view('kerjasama.kerjasama-detail');
+});
