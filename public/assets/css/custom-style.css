@@ -109,3 +109,7 @@
     width: 90px!important;
     height: auto;
 }
+.tm-portfolio-content {
+    background: #e7e7e7;
+    padding: 30px 20px;
+}

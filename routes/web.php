@@ -66,3 +66,11 @@ Route::get('/kerjasama', function () {
 Route::get('/kerjasama/detail', function () {
     return view('kerjasama.kerjasama-detail');
 });
+
+//frontend Jurnal
+Route::get('/jurnal', function () {
+    return view('jurnal.index');
+});
+Route::get('/jurnal/detail', function () {
+    return view('jurnal.jurnal-detail');
+});

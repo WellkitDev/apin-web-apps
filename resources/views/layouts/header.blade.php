@@ -38,14 +38,8 @@
                                     <li><a href="{{ url('/blog/gallery') }}">Gallery</a></li>
                                 </ul>
                             </li>
-                            {{-- <li><a href="#">Gallery</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Seminar</a></li>
-                                    <li><a href="#">Event</a></li>
-                                </ul>
-                            </li> --}}
                             <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
-                            <li><a href="#">Jurnal</a></li>
+                            <li><a href="{{ url('/jurnal') }}">Jurnal</a></li>
                             <li><a href="#">Area Anggota</a></li>
                         </ul>
                         <div id="dl-menu" class="dl-menuwrapper">
