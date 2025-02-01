@@ -113,3 +113,28 @@
     background: #e7e7e7;
     padding: 30px 20px;
 }
+
+.button-line{
+    margin: 0 10px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin-bottom: 5px;
+}
+.card-no-border {
+    border: 0 !important;
+}
+
+.team-detail>.content>.card>.top>img {
+    width: 120px;
+    height: auto;
+}
+.team-detail{
+    background-color: #f4f8fc;
+    padding-top: 11px;
+}
+.team-detail>.content>.card{
+    background-color: #f4f8fc;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}

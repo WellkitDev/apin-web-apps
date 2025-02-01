@@ -40,7 +40,7 @@
                             </li>
                             <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
                             <li><a href="{{ url('/jurnal') }}">Jurnal</a></li>
-                            <li><a href="#">Area Anggota</a></li>
+                            <li><a href="{{ url('/anggota') }}">Area Anggota</a></li>
                         </ul>
                         <div id="dl-menu" class="dl-menuwrapper">
                             <button class="dl-trigger">Open Menu</button>

@@ -74,3 +74,11 @@ Route::get('/jurnal', function () {
 Route::get('/jurnal/detail', function () {
     return view('jurnal.jurnal-detail');
 });
+
+//frontend Anggota
+Route::get('/anggota', function () {
+    return view('anggota.index');
+});
+Route::get('/anggota/detail', function () {
+    return view('anggota.anggota-detail');
+});
