@@ -82,3 +82,13 @@ Route::get('/anggota', function () {
 Route::get('/anggota/detail', function () {
     return view('anggota.anggota-detail');
 });
+
+//frontend faq
+Route::get('/faq', function () {
+    return view('faq.index');
+});
+
+//frontend Kontak
+Route::get('/contact', function () {
+    return view('contact.index');
+});
