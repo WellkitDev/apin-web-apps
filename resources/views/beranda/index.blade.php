@@ -8,17 +8,16 @@
                 <div class="col col-xs-6 col-lg-6">
                     <div class="wpo-hero-section-text">
                         <div class="wpo-hero-title-top">
-                            <span>We bring the right people together.</span>
+                            <span>Kami menyediakan berbagai layanan.</span>
                         </div>
                         <div class="wpo-hero-title">
-                            <h2>Helping You Solve Your Problems</h2>
+                            <h2>Fokus pada pengelolaan dan publikasi jurnal</h2>
                         </div>
                         <div class="wpo-hero-subtitle">
-                            <p>Facilitating client learning—that is, teaching clients how to resolve similar
-                                problems in the future.</p>
+                            <p>Didukung oleh para akademisi dan praktisi berpengalaman dalam publikasi ilmiah</p>
                         </div>
                         <div class="btns">
-                            <a href="about.html" class="btn theme-btn">Get Started</a>
+                            <a href="about.html" class="btn theme-btn">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +80,7 @@
                             </div>
                         </div>
                         <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Strategy and Planning</a></h2>
+                            <h2><a href="service-single.html">Publikasi Artikel Ilmiah</a></h2>
                             <p>One way to categorize the activities is in terms of the professional’s area of
                                 expertise such as competitive analysis, corporate strategy.</p>
                         </div>
@@ -96,7 +95,7 @@
                             </div>
                         </div>
                         <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Market Analysis</a></h2>
+                            <h2><a href="service-single.html">Pembuatan & Pengelola OJS</a></h2>
                             <p>One way to categorize the activities is in terms of the professional’s area of
                                 expertise such as competitive analysis, corporate strategy.</p>
                         </div>
@@ -111,7 +110,37 @@
                             </div>
                         </div>
                         <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Investment Strategy</a></h2>
+                            <h2><a href="service-single.html">Pendampingan Akreditasi Jurnal</a></h2>
+                            <p>One way to categorize the activities is in terms of the professional’s area of
+                                expertise such as competitive analysis, corporate strategy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="wpo-features-item">
+                        <div class="wpo-features-icon">
+                            <div class="icon">
+                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/clipboard.svg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="wpo-features-text">
+                            <h2><a href="service-single.html">Pelatihan & Workshop</a></h2>
+                            <p>One way to categorize the activities is in terms of the professional’s area of
+                                expertise such as competitive analysis, corporate strategy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="wpo-features-item">
+                        <div class="wpo-features-icon">
+                            <div class="icon">
+                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/clipboard.svg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="wpo-features-text">
+                            <h2><a href="service-single.html">Konsultasi & Strategi Publikasi</a></h2>
                             <p>One way to categorize the activities is in terms of the professional’s area of
                                 expertise such as competitive analysis, corporate strategy.</p>
                         </div>
@@ -148,19 +177,14 @@
                             </div>
                         </div>
                         <div class="wpo-about-icon-content">
-                            <h2>Professional And Dedicated <span>Consulting</span> Solutions</h2>
-                            <p>Management consulting includes a broad range of activities, and the many firms and
-                                their members often define these practices quite differently. One way to categorize
-                                the activities is in terms of the professional’s area of expertise (such as
-                                competitive analysis, corporate strategy, operations management, or human
-                                resources). But in practice, as many differences exist within these categories as
-                                between them.</p>
+                            <h2>Asosiasi Peneliti <span>dan</span> Inovasi Nusantara</h2>
+                            <p>Didirikan sebagai wadah kolaboratif yang bertujuan untuk mendukung publikasi ilmiah serta pengembangan kapasitas akademik di Indonesia. Dengan meningkatnya kebutuhan akan publikasi berkualitas di tingkat nasional dan internasional, APIN hadir untuk menjembatani akademisi, peneliti, dan mahasiswa dalam menghasilkan serta mengelola karya ilmiah yang bermutu tinggi. Selain itu, APIN juga membuka peluang kerjasama dalam tata kelola jurnal akademik dan pendampingan indeksasi jurnal guna membantu institusi akademik mencapai standar yang lebih tinggi dalam publikasi ilmiah.</p>
                             <div class="signeture">
-                                <span><img src="https://wpocean.com/html/tf/consultar-live/assets/images/signeture.png"
-                                        alt=""></span>
-                                <p>Robert William, CEO</p>
+                                {{-- <span><img src="https://wpocean.com/html/tf/consultar-live/assets/images/signeture.png"
+                                        alt=""></span> --}}
+                                <p>Angga Aldilla Gussman, S.H., M.H., CEO</p>
                             </div>
-                            <a class="theme-btn" href="about.html">More About</a>
+                            <a class="theme-btn" href="about.html">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -189,9 +213,8 @@
                             </div>
                         </div>
                         <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Strategy and Planning</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy the activities.</p>
+                            <h2><a href="service-single.html">Tim Profesional</a></h2>
+                            <p>Didukung oleh para akademisi dan praktisi berpengalaman dalam publikasi ilmiah</p>
                         </div>
                     </div>
                 </div>
@@ -204,9 +227,8 @@
                             </div>
                         </div>
                         <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Corporate Finance</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy the activities.</p>
+                            <h2><a href="service-single.html">Pendekatan Terstruktur </a></h2>
+                            <p>Setiap layanan dirancang dengan standar tinggi untuk memastikan hasil optimal</p>
                         </div>
                     </div>
                 </div>
@@ -219,9 +241,8 @@
                             </div>
                         </div>
                         <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Market Research</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy the activities.</p>
+                            <h2><a href="service-single.html">Kemitraan yang Fleksibel</a></h2>
+                            <p>Model kerja sama dapat disesuaikan dengan kebutuhan klien</p>
                         </div>
                     </div>
                 </div>
@@ -234,9 +255,8 @@
                             </div>
                         </div>
                         <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Business Analysis</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy the activities.</p>
+                            <h2><a href="service-single.html">Dukungan Teknis dan Akademik</a></h2>
+                            <p>Membantu dalam seluruh proses, mulai dari persiapan hingga publikasi</p>
                         </div>
                     </div>
                 </div>
@@ -249,27 +269,12 @@
                             </div>
                         </div>
                         <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Consumer Markets</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy the activities.</p>
+                            <h2><a href="service-single.html">Jaminan Kualitas</a></h2>
+                            <p>Fokus pada peningkatan mutu jurnal dan reputasi akademik</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-service-item">
-                        <div class="wpo-service-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/handshake.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Insurance</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy the activities.</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
