@@ -54,6 +54,7 @@
   </div>
   <!-- END wrapper -->
   @include('backend.layouts.themes')
+  @include('backend.layouts.message')
 
     <!-- base js -->
     <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>

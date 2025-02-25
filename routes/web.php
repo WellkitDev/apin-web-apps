@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +99,8 @@ Route::get('/contact', function () {
 Route::get('/new', function () {
     return view('backend.stater-page');
 });
+
+//backend PagesController
+Route::get('pages', [PagesController::class, 'index'])->name('pages.index');
+Route::get('pages/create', [PagesController::class, 'create'])->name('pages.create');
+Route::post('pages/create', [PagesController::class, 'store'])->name('pages.store');
