@@ -4,13 +4,13 @@
     <!-- Brand Logo -->
     <a href="index.html" class="logo">
         <span class="logo-light">
-            <span class="logo-lg"><img src="assets/images/logo-light.png" alt="logo"></span>
-            <span class="logo-sm"><img src="assets/images/logo-sm-light.png" alt="small logo"></span>
+            <span class="logo-lg"><img src="backend/assets/images/logo-light.png" alt="logo"></span>
+            <span class="logo-sm"><img src="backend/assets/images/logo-sm-light.png" alt="small logo"></span>
         </span>
 
         <span class="logo-dark">
-            <span class="logo-lg"><img src="assets/images/logo-dark.png" alt="dark logo"></span>
-            <span class="logo-sm"><img src="assets/images/logo-sm.png" alt="small logo"></span>
+            <span class="logo-lg"><img src="backend/assets/images/logo-dark.png" alt="dark logo"></span>
+            <span class="logo-sm"><img src="backend/assets/images/logo-sm.png" alt="small logo"></span>
         </span>
     </a>
 
@@ -38,15 +38,8 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="apps-calendar.html" class="side-nav-link">
-                    <span class="menu-icon"><i class="mdi mdi-calendar-month"></i></span>
-                    <span class="menu-text"> Calendar </span>
-                </a>
-            </li>
-
-            <li class="side-nav-title">Extra Pages</li>
-
+            <li class="side-nav-title">Customization</li>
+            
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-lock-outline"></i></span>
@@ -152,6 +145,13 @@
                         </li>
                     </ul>
                 </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="#" class="side-nav-link">
+                    <span class="menu-icon"><i class="mdi mdi-folder-cog-outline"></i></span>
+                    <span class="menu-text">Pages Control</span>
+                </a>
             </li>
 
             <li class="side-nav-title">Components</li>

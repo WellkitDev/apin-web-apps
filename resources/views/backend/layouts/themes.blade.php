@@ -111,7 +111,7 @@
 
     <div class="d-flex align-items-center gap-2 px-3 py-2 offcanvas-header border-top border-dashed">
         <button type="button" class="btn w-50 btn-soft-danger" id="reset-layout">Reset</button>
-        <a href="https://1.envato.market/XY7j5" class="btn w-50 btn-soft-info" target="_blank">Buy Now</a>
+        <button type="button" class="btn w-50 btn-soft-info" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
     </div>
 
 </div>
