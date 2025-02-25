@@ -92,3 +92,8 @@ Route::get('/faq', function () {
 Route::get('/contact', function () {
     return view('contact.index');
 });
+
+//backend starter
+Route::get('/new', function () {
+    return view('backend.stater-page');
+});
