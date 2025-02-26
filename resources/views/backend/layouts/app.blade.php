@@ -34,6 +34,7 @@
 
     <!-- Icons css -->
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- Theme Config Js -->
     <script src="{{ asset('backend/assets/js/config.js') }}"></script>
@@ -47,6 +48,7 @@
     @include('backend.layouts.side-nav-menu')
     @include('backend.layouts.app-topbar')
     <div class="page-content">
+      @include('backend.layouts.message')
         @yield('content')
         @include('backend.layouts.footer')
     </div>
@@ -54,7 +56,6 @@
   </div>
   <!-- END wrapper -->
   @include('backend.layouts.themes')
-  @include('backend.layouts.message')
 
     <!-- base js -->
     <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>

@@ -1,0 +1,49 @@
+/* Styling untuk container notifikasi */
+.massege {
+    position: fixed;
+    top: 134px;
+    right: 20px;
+    z-index: 1050; /* Pastikan berada di atas elemen lain */
+    width: 300px; /* Lebar notifikasi */
+}
+
+/* Styling untuk alert itu sendiri */
+.alert {
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Saat alert muncul */
+[x-show="show"] .alert {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling spesifik untuk tipe alert */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Tombol close */
+.btn-close {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
