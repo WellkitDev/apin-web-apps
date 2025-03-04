@@ -148,7 +148,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="#" class="side-nav-link">
+                <a href="{{ route('pages.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-folder-cog-outline"></i></span>
                     <span class="menu-text">Pages Control</span>
                 </a>
