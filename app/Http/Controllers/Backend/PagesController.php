@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Models\Pages;
+use App\Models\Page;
+use DOMDocument;
 
 class PagesController extends Controller
 {
@@ -15,7 +16,8 @@ class PagesController extends Controller
     public function index()
     {
         //
-        return view('backend.pages.index-page');
+        $pages = Page::all();
+        return view('backend.pages.index-page', compact('pages'));
     }
 
     /**
@@ -37,28 +39,69 @@ class PagesController extends Controller
             'title' => 'required|string|max:255',
             'type' => 'required|string',
             'image' => 'nullable|image|mimes:png,jpg,jpeg|max:5048',
-            'description' => 'nullable',
+            'description' => 'nullable|string',
+            'is_active' => 'nullable|boolean',
         ]);
 
-        $page = new Pages();
-
-        if ($request->hasFile('image')) {
-            # code...
-            $file = $request->file('image');
-            $finalname = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/images'), $finalname);
-            $page->image = '/uploads/images/' . $finalname;
-        }
-
+        $page = new Page();
         $page->title = $request->title;
         $page->type = $request->type;
-        $page->description = $request->description;
         $page->slug = Str::slug($request->title);
         $page->is_active = $request->is_active;
+
+        // Simpan gambar utama (jika ada)
+        if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $finalname = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension(); // Tambah uniqid untuk unik
+                $file->move(public_path('uploads/images'), $finalname); // Pakai folder images
+                $page->image = '/uploads/images/' . $finalname;
+        }
+
+        // Proses description dari Summernote
+        $description = $request->description;
+        if ($description) {
+            $dom = new \DOMDocument();
+
+            @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+            $images = $dom->getElementsByTagName('img');
+            
+            foreach ($images as $key => $img) {
+                $src = $img->getAttribute('src');
+                
+                // Cek apakah gambar adalah base64
+                if (strpos($src, 'data:image/') === 0) {
+                    $dataParts = explode(',', $src);
+
+                    if (count($dataParts) == 2) {
+                        $base64Data = $dataParts[1];
+                        $imageData = base64_decode($base64Data);
+                        
+                        if ($imageData !== false) {
+                            // Tentukan tipe gambar dari header base64
+                            $mimeType = explode(';', explode(':', $dataParts[0])[1])[0];
+                            $extension = str_replace('image/', '', $mimeType);
+                            
+                            // Buat nama file unik
+                            $imageName = '/uploads/images/' . time() . '_' . uniqid() . '_' . $key . '.' . $extension;
+                            $imagePath = public_path($imageName);
+                            
+                            // Simpan gambar ke folder public/uploads/images
+                            file_put_contents($imagePath, $imageData);
+                            
+                            // Update src di HTML
+                            $img->setAttribute('src', $imageName);
+                        }
+                    }
+                }
+            }
+            
+            $page->description = $dom->saveHTML();
+        }
+
         $page->save();
 
         return redirect()->back()->with('success', 'Page created successfully');
-
     }
 
     /**
@@ -72,17 +115,108 @@ class PagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
         //
+        $slug = rawurldecode($slug);
+        $page = Page::where('slug', $slug)->first();
+        return view('backend.pages.edit-page', compact('page'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $slug)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'type' => 'required|string',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg|max:5048',
+            'description' => 'nullable|string',
+            'is_active' => 'nullable|boolean',
+        ]);
+
+        $slug = rawurldecode($slug);
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        // Update data dasar
+        $page->title = $request->title;
+        $page->type = $request->type;
+        $page->is_active = $request->boolean('is_active', true);
+        
+        // Tangani slug (pastikan unik)
+        $newSlug = Str::slug($request->title);
+        
+        if ($newSlug !== $page->slug) { // Hanya update slug jika title berubah
+            $slugExists = Page::where('slug', $newSlug)
+                ->where('id', '!=', $page->id) // Kecuali entri ini sendiri
+                ->exists();
+            
+            if ($slugExists) {
+                $count = 1;
+                $baseSlug = $newSlug;
+                do {
+                    $newSlug = $baseSlug . '-' . $count++;
+                } while (Page::where('slug', $newSlug)->where('id', '!=', $page->id)->exists());
+            }
+            $page->slug = $newSlug;
+        }
+
+        // Tangani gambar utama
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama jika ada
+            if ($page->image && file_exists(public_path($page->image))) {
+                unlink(public_path($page->image));
+            }
+
+            $file = $request->file('image');
+            $finalname = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/images'), $finalname);
+            $page->image = '/uploads/images/' . $finalname;
+        } else {
+            $page->image = $page->image;
+        }
+
+        // Proses description dari Summernote
+        $description = $request->description;
+        if ($description) {
+            $dom = new \DOMDocument();
+            @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+            $images = $dom->getElementsByTagName('img');
+            
+            foreach ($images as $key => $img) {
+                $src = $img->getAttribute('src');
+                
+                // Cek apakah gambar adalah base64 (hanya proses gambar baru, skip path yang sudah ada)
+                if (strpos($src, 'data:image/') === 0) {
+                    $dataParts = explode(',', $src);
+                    if (count($dataParts) == 2) {
+                        $base64Data = $dataParts[1];
+                        $imageData = base64_decode($base64Data);
+                        
+                        if ($imageData !== false) {
+                            $mimeType = explode(';', explode(':', $dataParts[0])[1])[0];
+                            $extension = str_replace('image/', '', $mimeType);
+                            
+                            $imageName = '/uploads/images/' . time() . '_' . uniqid() . '_' . $key . '.' . $extension;
+                            $imagePath = public_path($imageName);
+                            
+                            file_put_contents($imagePath, $imageData);
+                            $img->setAttribute('src', $imageName);
+                        }
+                    }
+                }
+                // Gambar dengan src seperti '/uploads/images/...' dibiarkan utuh
+            }
+            
+            $page->description = $dom->saveHTML();
+        }
+
+        $page->save();
+
+        return redirect()->back()->with('success', 'Page updated successfully');
     }
 
     /**

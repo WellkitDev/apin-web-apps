@@ -36,6 +36,7 @@
             <div class="card">
                 <div class="card-header border-bottom border-dashed d-flex align-items-center">
                     <h4 class="header-title">Pages Create</h4>
+                    <a href="{{ route('pages.index') }}" class="ms-auto"><h5><span class="mdi mdi-close"></span></h5></a>
                 </div>
 
                 <div class="card-body">
@@ -107,12 +108,14 @@
     $('#description').summernote({
         placeholder: 'Description Pages..',
         tabsize: 2,
-        height: 100,
+        height: 300,
         toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
         ]
     });
   </script>

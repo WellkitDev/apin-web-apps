@@ -104,3 +104,6 @@ Route::get('/new', function () {
 Route::get('pages', [PagesController::class, 'index'])->name('pages.index');
 Route::get('pages/create', [PagesController::class, 'create'])->name('pages.create');
 Route::post('pages/create', [PagesController::class, 'store'])->name('pages.store');
+Route::get('pages/{id}', [PagesController::class, 'edit'])->name('pages.edit');
+Route::post('pages/{id}', [PagesController::class, 'update'])->name('pages.update');
+Route::delete('pages/delete/{id}', [PagesController::class, 'destroy'])->name('pages.destroy');
