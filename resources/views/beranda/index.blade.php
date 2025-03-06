@@ -281,7 +281,7 @@
     <!-- end of wpo-service-section -->
 
     <!-- start of wpo-pricing-section -->
-    <section class="wpo-pricing-section section-padding">
+    {{-- <section class="wpo-pricing-section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -341,10 +341,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- end of wpo-pricing-section -->
     <!-- start wpo-fun-fact-section -->
-    <section class="wpo-fun-fact-section wpo-fun-fact-section-s2">
+    {{-- <section class="wpo-fun-fact-section wpo-fun-fact-section-s2">
         <div class="container">
             <div class="row">
                 <div class="col col-xs-12">
@@ -377,10 +377,10 @@
                 </div>
             </div>
         </div> <!-- end container -->
-    </section>
+    </section> --}}
     <!-- end wpo-fun-fact-section -->
     <!--Start wpo-gallery-section-->
-    <section class="wpo-gallery-section section-padding">
+    {{-- <section class="wpo-gallery-section section-padding">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-8">
@@ -452,11 +452,11 @@
                 </div>
             </div> <!-- end row -->
         </div>
-    </section>
+    </section> --}}
     <!--End wpo-gallery-section-->
 
     <!--Start wpo-testimonial-section-->
-    <section class="wpo-testimonial-section section-padding">
+    {{-- <section class="wpo-testimonial-section section-padding">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -510,11 +510,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--End wpo-testimonial-section-->
 
     <!--Start wpo-support-section-->
-    <section class="wpo-support-section">
+    {{-- <section class="wpo-support-section">
         <div class="container">
             <div class="wpo-support-wrapper">
                 <div class="wpo-support-text">
@@ -527,11 +527,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--End wpo-support-section-->
 
     <!-- start of wpo-blog-section -->
-    <section class="wpo-blog-section section-padding">
+    {{-- <section class="wpo-blog-section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -642,6 +642,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- end of wpo-blog-section -->
 @endsection

@@ -61,10 +61,10 @@
                                     <a href="{{ route('pages.destroy', $page->id) }}" class="btn btn-danger btn-sm">Delete</a>
                                 </td> --}}
                                 <td class="action-buttons">
-                                    <a href="{{ route('pages.edit', ['id' => rawurlencode($page->slug)]) }}" class="btn badge bg-primary">Edit</a>
-                                    <form method="post" action="{{ route('pages.destroy', ['id' => rawurlencode($page->slug)]) }}" style="display:inline-block;">
+                                    <a href="{{ route('pages.edit', ['slug' => rawurlencode($page->slug)]) }}" class="btn badge bg-primary">Edit</a>
+                                    <form method="post" action="{{ route('pages.destroy',$page->id) }}" style="display:inline-block;">
                                         @csrf
-                                        @method('DELETE')
+                                       @method('DELETE')
                                         <button type="submit" class="btn badge bg-danger show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                     </form>
                                 </td>

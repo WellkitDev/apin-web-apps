@@ -18,7 +18,27 @@
                     <div id="navbar" class="collapse navbar-collapse navigation-holder">
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav mb-2 mb-lg-0">
-                            <li><a class="active" href="{{ url('/') }}">Beranda</a></li>
+                            <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
+
+                            @foreach ($menuPages as $page)
+                                <li>
+                                    <a href="{{ url($page->slug) }}" class="{{ request()->is($page->slug) || request()->is($page->slug . '/*') ? 'active' : '' }}">
+                                        {{ $page->type }}
+                                    </a>    
+                                    {{-- @if ($page->items->isNotEmpty())
+                                        <ul class="sub-menu">
+                                            @foreach ($page->items as $item)
+                                                <li>
+                                                    <a href="{{ url($page->slug . '/' . Str::slug($item->title)) }}">
+                                                        {{ $item->title }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif --}}
+                                </li>
+                            @endforeach
+
                             <li><a href="{{ url('/tentang') }}">Tentang</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>

@@ -216,14 +216,53 @@ class PagesController extends Controller
 
         $page->save();
 
-        return redirect()->back()->with('success', 'Page updated successfully');
+        return redirect()->route('pages.index')->with('success', 'Page updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $page = Page::findOrFail($id);
+
+        // Hapus gambar utama jika ada
+        if ($page->image && file_exists(public_path($page->image))) {
+            unlink(public_path($page->image));
+        }
+
+        // Hapus gambar dalam description (Summernote)
+        if ($page->description) {
+            $dom = new \DOMDocument();
+            @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $page->description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+            $images = $dom->getElementsByTagName('img');
+            
+            foreach ($images as $img) {
+                $src = $img->getAttribute('src');
+                // Hanya hapus gambar yang ada di /uploads/images/
+                if (strpos($src, '/uploads/images/') === 0 && file_exists(public_path($src))) {
+                    unlink(public_path($src));
+                }
+            }
+        }
+
+        // Hapus halaman (cascade akan hapus page_items)
+        $page->delete();
+
+        return redirect()->route('pages.index')->with('success', 'Halaman berhasil dihapus');
+    }
+
+    // Show sub page
+    public function showPage($slug)
+    {
+        // $page = Page::where('slug', $slug)
+        //     ->with(['items' => function ($query) use ($subSlug) {
+        //         $query->where('title', 'like', '%' . urldecode($subSlug) . '%');
+        //     }])
+        //     ->firstOrFail();
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        return view('page.index', compact('page'));
     }
 }

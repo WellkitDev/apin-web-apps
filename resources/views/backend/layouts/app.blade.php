@@ -60,6 +60,7 @@
     <!-- base js -->
     <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
 
     <!-- end base js -->
 

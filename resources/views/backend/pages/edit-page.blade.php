@@ -42,7 +42,7 @@
                 <div class="card-body">
                     <p class="text-muted">Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading for documentation on required classes, form layout, and more.</p>
 
-                    <form action="{{ route('pages.update', ['id' => rawurlencode($page->slug)]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('pages.update', ['slug' => rawurlencode($page->slug)]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6 sm-12 mb-3">
