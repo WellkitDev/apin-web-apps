@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\PagesController;
-// use App\Http\Controllers\Backend\PagesController;
+use App\Http\Controllers\Backend\PageItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,6 +108,14 @@ Route::post('pages/create', [PagesController::class, 'store'])->name('pages.stor
 Route::get('pages/{slug}', [PagesController::class, 'edit'])->name('pages.edit');
 Route::post('pages/{slug}', [PagesController::class, 'update'])->name('pages.update');
 Route::delete('pages/delete/{id}', [PagesController::class, 'destroy'])->name('pages.destroy');
+
+//backend PagesItemController
+Route::get('pages-item', [PageItemController::class, 'index'])->name('page-item.index');
+Route::get('pages-item/create', [PageItemController::class, 'create'])->name('page-item.create');
+Route::post('pages-item/create', [PageItemController::class, 'store'])->name('page-item.store');
+Route::get('pages-item/{slug}', [PageItemController::class, 'edit'])->name('page-item.edit');
+Route::post('pages-item/{slug}', [PageItemController::class, 'update'])->name('page-item.update');
+Route::delete('pages-item/delete/{id}', [PageItemController::class, 'destroy'])->name('page-item.destroy');
 
 // Frontend show page
 Route::get('/{slug}', [PagesController::class, 'showPage'])->name('pages.show');

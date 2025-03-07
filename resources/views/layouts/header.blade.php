@@ -19,10 +19,18 @@
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav mb-2 mb-lg-0">
                             <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
+                            <!-- Grup Tentang -->
+                            @foreach ($menuPages->where('type', 'About') as $page)
+                                <li>
+                                    <a href="{{ url($page->slug) }}" class="{{ request()->is($page->slug) ? 'active' : '' }}">
+                                        {{ $page->title }}
+                                    </a>
+                                </li>
+                            @endforeach
 
                             @foreach ($menuPages as $page)
                                 <li>
-                                    <a href="{{ url($page->slug) }}" class="{{ request()->is($page->slug) || request()->is($page->slug . '/*') ? 'active' : '' }}">
+                                    <a href="{{ url($page->type) }}" class="{{ request()->is($page->type) || request()->is($page->type . '/*') ? 'active' : '' }}">
                                         {{ $page->type }}
                                     </a>    
                                     {{-- @if ($page->items->isNotEmpty())

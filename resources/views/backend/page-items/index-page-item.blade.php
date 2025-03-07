@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="card-header border-bottom border-dashed d-flex align-items-center">
                     <h4 class="header-title">All Pages</h4>
-                    <a href="{{ route('pages.create') }}" class="btn btn-outline-primary ms-auto">Create</a>
+                    <a href="{{ route('page-item.create') }}" class="btn btn-outline-primary ms-auto">Create</a>
                 </div>
 
                 <div class="card-body pt-2">
@@ -39,32 +39,28 @@
                         <thead>
                             <tr>
                                 <th>Title</th>
-                                <th>Slug</th>
                                 <th>Pages</th>
+                                <th>Order</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($pages as $page)
+                            @foreach($pageItems as $page)
                             <tr>
                                 <td>{{ $page->title }}</td>
-                                <td>{{ $page->slug }}</td>
-                                <td>{{ $page->type }}</td>
+                                <td>{{ $page->page->type }}</td>
+                                <td>{{ $page->sort_order }}</td>
                                 @if ($page->is_active == 1)
                                 <td><span class="badge bg-success">Active</span></td>
                                 @endif
                                 @if ($page->is_active == 0)
                                 <td><span class="badge bg-danger">Inactive</span></td>
                                 @endif
-                                {{-- <td>
-                                    <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="{{ route('pages.destroy', $page->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                                </td> --}}
                                 <td class="action-buttons">
-                                    <a href="{{ route('pages.edit', ['slug' => rawurlencode($page->slug)]) }}" class="btn badge bg-primary">Edit</a>
-                                    <form method="post" action="{{ route('pages.destroy',$page->id) }}" style="display:inline-block;">
+                                    <a href="{{ route('page-item.edit', ['slug' => rawurlencode($page->slug)]) }}" class="btn badge bg-primary">Edit</a>
+                                    <form method="post" action="{{ route('page-item.destroy',$page->id) }}" style="display:inline-block;">
                                         @csrf
                                        @method('DELETE')
                                         <button type="submit" class="btn badge bg-danger show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>

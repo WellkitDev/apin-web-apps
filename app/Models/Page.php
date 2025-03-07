@@ -17,4 +17,9 @@ class Page extends Model
         'slug',
     ];
 
+    public function pageItems()
+    {
+        return $this->hasMany(PageItem::class, 'page_id');
+    }
+
 }
