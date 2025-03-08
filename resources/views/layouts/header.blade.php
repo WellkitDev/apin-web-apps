@@ -20,107 +20,121 @@
                         <ul class="nav navbar-nav mb-2 mb-lg-0">
                             <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
                             <!-- Grup Tentang -->
-                            @foreach ($menuPages->where('type', 'About') as $page)
-                                <li>
-                                    <a href="{{ url($page->slug) }}" class="{{ request()->is($page->slug) ? 'active' : '' }}">
-                                        {{ $page->title }}
-                                    </a>
-                                </li>
-                            @endforeach
-
-                            @foreach ($menuPages as $page)
-                                <li>
-                                    <a href="{{ url($page->type) }}" class="{{ request()->is($page->type) || request()->is($page->type . '/*') ? 'active' : '' }}">
-                                        {{ $page->type }}
-                                    </a>    
-                                    {{-- @if ($page->items->isNotEmpty())
-                                        <ul class="sub-menu">
-                                            @foreach ($page->items as $item)
-                                                <li>
-                                                    <a href="{{ url($page->slug . '/' . Str::slug($item->title)) }}">
-                                                        {{ $item->title }}
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif --}}
-                                </li>
-                            @endforeach
-
-                            <li><a href="{{ url('/tentang') }}">Tentang</a>
+                            <!-- Grup About -->
+                            @if ($menuPages->has('About'))
+                            @php
+                                $aboutPages = $menuPages['About'];
+                                $parentPage = $aboutPages->first(); // Misalnya 'About us' sebagai parent
+                                $subPages = $aboutPages->slice(0); // Sisanya jadi sub-menu
+                            @endphp
+                            <li>
+                                <a href="{{ url($parentPage->slug) }}" class="{{ request()->is($parentPage->slug) ? 'active' : '' }}">
+                                    {{ $parentPage->title }}
+                                </a>
+                                @if ($subPages->isNotEmpty())
+                                <ul class="sub-menu">
+                                    @foreach ($subPages as $subPage)
+                                    <li>
+                                        <a href="{{ url($subPage->slug) }}">
+                                            {{ $subPage->title }}
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                @endif
+                            </li>
+                            @endif
+                            <!-- Grup Seminar -->
+                            {{-- <li><a href="{{ url('/tentang') }}">Tentang</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
                                     <li><a href="{{ url('/tentang/program') }}">Program</a></li>
                                     <li><a href="{{ url('/tentang/layanan') }}">Layanan</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="{{ url('/seminar') }}">Seminar</a>
+                            </li> --}}
+                            <li><a href="{{ url('/coming-soon') }}">Seminar</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ url('/seminar') }}">Jadwal</a></li>
-                                    <li><a href="{{ url('/seminar/arsip') }}">Arsip</a></li>
+                                    <li><a href="{{ url('/coming-soon') }}">Jadwal</a></li>
+                                    <li><a href="{{ url('/coming-soon') }}">Arsip</a></li>
+                                    {{-- <li><a href="{{ url('/seminar') }}">Jadwal</a></li>
+                                    <li><a href="{{ url('/seminar/arsip') }}">Arsip</a></li> --}}
                                 </ul>
                             </li>
-                            <li><a href="{{ url('/blog/artikel') }}">Blog</a>
+                            <li><a href="{{ url('/coming-soon') }}">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ url('/coming-soon') }}">Artikel</a></li>
+                                    <li><a href="{{ url('/coming-soon') }}">Gallery</a></li>
+                                </ul>
+                            </li>
+                            {{-- <li><a href="{{ url('/blog/artikel') }}">Blog</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ url('/blog/artikel') }}">Artikel</a></li>
                                     <li><a href="{{ url('/blog/gallery') }}">Gallery</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
-                            <li><a href="{{ url('/jurnal') }}">Jurnal</a></li>
-                            <li><a href="{{ url('/anggota') }}">Area Anggota</a></li>
+                            </li> --}}
+                            <li><a href="{{ url('/coming-soon') }}">Kerjasama</a></li>
+                            <li><a href="{{ url('/coming-soon') }}">Jurnal</a></li>
+                            <li><a href="{{ url('/coming-soon') }}">Anggota</a></li>
                         </ul>
                         <div id="dl-menu" class="dl-menuwrapper">
                             <button class="dl-trigger">Open Menu</button>
                             <ul class="dl-menu">
-                                <li>
-                                    <a href="#">Home</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="#">Home style 1</a></li>
-                                        <li><a href="index-2.html">Home style 2</a></li>
-                                        <li><a href="index-3.html">Home style 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="#">Services</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="service.html">Service</a></li>
-                                        <li><a href="service-single.html">Service Single</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Projects</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="project.html">Project</a></li>
-                                        <li><a href="project-single.html">Project Single</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="pricing.html">Pricing</a></li>
-                                        <li><a href="404.html">Error 404</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="http://google.com">Blog</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="blog.html">Blog right sidebar</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                        <li><a href="blog-fullwidth.html">Blog fullwidth</a></li>
-                                        <li>
-                                            <a href="#">Blog details</a>
-                                            <ul class="dl-submenu">
-                                                <li><a href="blog-single.html">Blog details right sidebar</a>
-                                                </li>
-                                                <li><a href="blog-single-left-sidebar.html">Blog details left
-                                                        sidebar</a></li>
-                                                <li><a href="blog-single-fullwidth.html">Blog details
-                                                        fullwidth</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
+                                <!-- Grup About -->
+                            @if ($menuPages->has('About'))
+                            @php
+                                $aboutPages = $menuPages['About'];
+                                $parentPage = $aboutPages->first(); // Misalnya 'About us' sebagai parent
+                                $subPages = $aboutPages->slice(0); // Sisanya jadi sub-menu
+                            @endphp
+                            <li>
+                                <a href="{{ url($parentPage->slug) }}" class="{{ request()->is($parentPage->slug) ? 'active' : '' }}">
+                                    {{ $parentPage->title }}
+                                </a>
+                                @if ($subPages->isNotEmpty())
+                                <ul class="dl-submenu">
+                                    @foreach ($subPages as $subPage)
+                                    <li>
+                                        <a href="{{ url($subPage->slug) }}">
+                                            {{ $subPage->title }}
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                @endif
+                            </li>
+                            @endif
+                            <!-- Grup Seminar -->
+                            {{-- <li><a href="{{ url('/tentang') }}">Tentang</a>
+                                <ul class="dl-submenu">
+                                    <li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
+                                    <li><a href="{{ url('/tentang/program') }}">Program</a></li>
+                                    <li><a href="{{ url('/tentang/layanan') }}">Layanan</a></li>
+                                </ul>
+                            </li> --}}
+                            <li><a href="{{ url('/coming-soon') }}">Seminar</a>
+                                <ul class="dl-submenu">
+                                    <li><a href="{{ url('/coming-soon') }}">Jadwal</a></li>
+                                    <li><a href="{{ url('/coming-soon') }}">Arsip</a></li>
+                                    {{-- <li><a href="{{ url('/seminar') }}">Jadwal</a></li>
+                                    <li><a href="{{ url('/seminar/arsip') }}">Arsip</a></li> --}}
+                                </ul>
+                            </li>
+                            <li><a href="{{ url('/coming-soon') }}">Blog</a>
+                                <ul class="dl-submenu">
+                                    <li><a href="{{ url('/coming-soon') }}">Artikel</a></li>
+                                    <li><a href="{{ url('/coming-soon') }}">Gallery</a></li>
+                                </ul>
+                            </li>
+                            {{-- <li><a href="{{ url('/blog/artikel') }}">Blog</a>
+                                <ul class="dl-submenu">
+                                    <li><a href="{{ url('/blog/artikel') }}">Artikel</a></li>
+                                    <li><a href="{{ url('/blog/gallery') }}">Gallery</a></li>
+                                </ul>
+                            </li> --}}
+                            <li><a href="{{ url('/coming-soon') }}">Kerjasama</a></li>
+                            <li><a href="{{ url('/coming-soon') }}">Jurnal</a></li>
+                            <li><a href="{{ url('/coming-soon') }}">Anggota</a></li>
                             </ul>
                         </div><!-- /dl-menuwrapper -->
                     </div><!-- end of nav-collapse -->

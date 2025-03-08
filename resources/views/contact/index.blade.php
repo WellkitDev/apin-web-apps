@@ -69,45 +69,6 @@
                                 </div> 
                             </div>
                         </div>
-                        <div class="wpo-contact-title">
-                            <h2>Have Any Question?</h2>
-                            <p>It is a long established fact that a reader will be distracted
-                                content of a page when looking.</p>
-                        </div>
-                        <div class="wpo-contact-form-area">
-                            <form method="post" class="contact-validation-active" id="contact-form-main">
-                                <div>
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name*">
-                                </div>
-                                <div>
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email*">
-                                </div>
-                                <div>
-                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone*">
-                                </div>
-                                <div>
-                                    <select name="subject" class="form-control">
-                                        <option disabled="disabled" selected>Subject</option>
-                                        <option>Subject 1</option>
-                                        <option>Subject 2</option>
-                                        <option>Subject 3</option>
-                                    </select>
-                                </div>
-                                <div class="fullwidth">
-                                    <textarea class="form-control" name="note"  id="note" placeholder="Message..."></textarea>
-                                </div>
-                                <div class="submit-area">
-                                    <button type="submit" class="theme-btn">Get in Touch</button>
-                                    <div id="loader">
-                                        <i class="ti-reload"></i>
-                                    </div>
-                                </div>
-                                <div class="clearfix error-handling-messages">
-                                    <div id="success">Thank you</div>
-                                    <div id="error"> Error occurred while sending email. Please try again later. </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>                
                 </div>
             </div> <!-- end container -->

@@ -17,7 +17,7 @@
                             <p>Didukung oleh para akademisi dan praktisi berpengalaman dalam publikasi ilmiah</p>
                         </div>
                         <div class="btns">
-                            <a href="about.html" class="btn theme-btn">Selengkapnya</a>
+                            <a href="{{ url('/layanan') }}" class="btn theme-btn">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -28,18 +28,6 @@
                 <div class="r-img">
                     <img src="https://wpocean.com/html/tf/consultar-live/assets/images/slider/right-img2.png"
                         alt="">
-                    {{-- <img src="assets/images/slider/right-img2.png" alt=""> --}}
-                    <!-- <div class="svg-shape">
-                                                                                <svg width="826" height="309" viewBox="0 0 826 309" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M100.983 35.4286C112.365 13.6512 134.903 0 159.476 0H754.544C785.255 0 811.908 21.1833 818.841 51.102L823.663 71.9141C825.212 78.5972 825.709 85.4808 825.136 92.317L812.063 248.505C809.201 282.702 780.61 309 746.293 309H66.9661C17.3837 309 -14.4933 256.371 8.4734 212.429L100.983 35.4286Z" fill="#edf2f8"/>
-                                                                                 </svg>
-                                                                            </div> -->
-                    {{-- <div class="pop-up-video">
-                        <div class="video-holder">
-                            <a href="https://www.youtube.com/embed/7Jv48RQ_2gk" class="video-btn" data-type="iframe"><i
-                                    class="fi flaticon-play"></i></a>
-                        </div>
-                    </div> --}}
                 </div>
                 <div class="wpo-happy-client">
                     <div class="wpo-happy-client-text">
@@ -68,87 +56,29 @@
     </section>
     <!-- end of wpo-hero-section-1 slider -->
     <!-- start of wpo-features-section -->
-    <section class="wpo-features-section section-padding">
+    {{-- <section class="wpo-features-section section-padding">
         <div class="container">
+            @if ($page->pageItems->isNotEmpty())
             <div class="row">
+                @foreach ($page->pageItems as $item)
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="wpo-features-item">
                         <div class="wpo-features-icon">
                             <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg"
-                                    alt="">
+                                <img src="{{ $item->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"alt="{{ $item->title }}">
                             </div>
                         </div>
                         <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Publikasi Artikel Ilmiah</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy.</p>
+                            <h2><a href="{{ url($page->slug . '/' . Str::slug($item->title)) }}">{{ $item->title }}</a></h2>
+                            <p>{{ $item->description ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-features-item">
-                        <div class="wpo-features-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/bar-graph.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Pembuatan & Pengelola OJS</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-features-item">
-                        <div class="wpo-features-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/clipboard.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Pendampingan Akreditasi Jurnal</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-features-item">
-                        <div class="wpo-features-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/clipboard.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Pelatihan & Workshop</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-features-item">
-                        <div class="wpo-features-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/clipboard.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-features-text">
-                            <h2><a href="service-single.html">Konsultasi & Strategi Publikasi</a></h2>
-                            <p>One way to categorize the activities is in terms of the professional’s area of
-                                expertise such as competitive analysis, corporate strategy.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            @endif
         </div>
-    </section>
+    </section> --}}
     <!-- end of wpo-features-section -->
 
     <!-- start of wpo-about-section -->
@@ -158,7 +88,7 @@
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="wpo-about-wrap">
                         <div class="wpo-about-img">
-                            <img src="https://wpocean.com/html/tf/consultar-live/assets/images/about.jpg" alt="">
+                            <img src="{{ $aboutPage->image }}" alt="">
                             <div class="wpo-ab-shape-1"><img
                                     src="https://wpocean.com/html/tf/consultar-live/assets/images/ab-shape-1.png"
                                     alt=""></div>
@@ -177,14 +107,14 @@
                             </div>
                         </div>
                         <div class="wpo-about-icon-content">
-                            <h2>Asosiasi Peneliti <span>dan</span> Inovasi Nusantara</h2>
-                            <p>Didirikan sebagai wadah kolaboratif yang bertujuan untuk mendukung publikasi ilmiah serta pengembangan kapasitas akademik di Indonesia. Dengan meningkatnya kebutuhan akan publikasi berkualitas di tingkat nasional dan internasional, APIN hadir untuk menjembatani akademisi, peneliti, dan mahasiswa dalam menghasilkan serta mengelola karya ilmiah yang bermutu tinggi. Selain itu, APIN juga membuka peluang kerjasama dalam tata kelola jurnal akademik dan pendampingan indeksasi jurnal guna membantu institusi akademik mencapai standar yang lebih tinggi dalam publikasi ilmiah.</p>
+                            <h2>{{ $aboutPage->title }}</h2>
+                            <p>{{ Str::limit(strip_tags($aboutPage->description), 300) }}</p>
                             <div class="signeture">
                                 {{-- <span><img src="https://wpocean.com/html/tf/consultar-live/assets/images/signeture.png"
                                         alt=""></span> --}}
-                                <p>Angga Aldilla Gussman, S.H., M.H., CEO</p>
+                                {{-- <p>Angga Aldilla Gussman, S.H., M.H., CEO</p> --}}
                             </div>
-                            <a class="theme-btn" href="about.html">Selengkapnya</a>
+                            <a class="theme-btn" href="{{ url('/tentang') }}">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -193,6 +123,7 @@
     </section>
     <!-- end of wpo-about-section -->
     <!-- start of wpo-service-section -->
+    @if ($servicesPage || $services)
     <section class="wpo-service-section section-padding">
         <div class="container">
             <div class="row">
@@ -203,81 +134,59 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-service-item">
-                        <div class="wpo-service-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/clipboard.svg"
-                                    alt="">
+            @if ($servicesPage && $servicesPage->pageItems->isNotEmpty())
+                <div class="row">
+                    @foreach ($servicesPage->pageItems as $service)
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="wpo-service-item">
+                                <div class="wpo-service-icon">
+                                    <div class="icon">
+                                        <img src="{{ $service->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"
+                                             alt="{{ $service->title }}">
+                                    </div>
+                                </div>
+                                <div class="wpo-service-text">
+                                    <h2>
+                                        {{-- <a href="{{ url($servicesPage->slug . '/' . Str::slug($service->slug)) }}">
+                                            {{ $service->title }}
+                                        </a> --}}
+                                        <a href="#">
+                                            {{ $service->title }}
+                                        </a>
+                                    </h2>
+                                    <p>{{ Str::limit(strip_tags($service->description), 300) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Tim Profesional</a></h2>
-                            <p>Didukung oleh para akademisi dan praktisi berpengalaman dalam publikasi ilmiah</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-service-item">
-                        <div class="wpo-service-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/briefcase.svg"
-                                    alt="">
+            @elseif ($services && $services->isNotEmpty())
+                <div class="row">
+                    @foreach ($services as $service)
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="wpo-service-item">
+                                <div class="wpo-service-icon">
+                                    <div class="icon">
+                                        <img src="{{ $service->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"
+                                             alt="{{ $service->title }}">
+                                    </div>
+                                </div>
+                                <div class="wpo-service-text">
+                                    <h2>
+                                        <a href="{{ url('layanan/' . Str::slug($service->title)) }}">
+                                            {{ $service->title }}
+                                        </a>
+                                    </h2>
+                                    <p>{{ Str::limit(strip_tags($service->description), 300) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Pendekatan Terstruktur </a></h2>
-                            <p>Setiap layanan dirancang dengan standar tinggi untuk memastikan hasil optimal</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-service-item">
-                        <div class="wpo-service-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/chart.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Kemitraan yang Fleksibel</a></h2>
-                            <p>Model kerja sama dapat disesuaikan dengan kebutuhan klien</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-service-item">
-                        <div class="wpo-service-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/badge.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Dukungan Teknis dan Akademik</a></h2>
-                            <p>Membantu dalam seluruh proses, mulai dari persiapan hingga publikasi</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="wpo-service-item">
-                        <div class="wpo-service-icon">
-                            <div class="icon">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/icon/goal.svg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="wpo-service-text">
-                            <h2><a href="service-single.html">Jaminan Kualitas</a></h2>
-                            <p>Fokus pada peningkatan mutu jurnal dan reputasi akademik</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+            @endif
         </div>
     </section>
+    @endif
     <!-- end of wpo-service-section -->
 
     <!-- start of wpo-pricing-section -->

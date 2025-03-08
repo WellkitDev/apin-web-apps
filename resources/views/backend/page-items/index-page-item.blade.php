@@ -40,6 +40,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Pages</th>
+                                <th>Group</th>
                                 <th>Order</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -50,6 +51,7 @@
                             @foreach($pageItems as $page)
                             <tr>
                                 <td>{{ $page->title }}</td>
+                                <td>{{ $page->page->title }}</td>
                                 <td>{{ $page->page->type }}</td>
                                 <td>{{ $page->sort_order }}</td>
                                 @if ($page->is_active == 1)

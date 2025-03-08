@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Page;
+use App\Models\PageItem;
 use DOMDocument;
 
 class PagesController extends Controller
@@ -256,13 +257,24 @@ class PagesController extends Controller
     // Show sub page
     public function showPage($slug)
     {
-        // $page = Page::where('slug', $slug)
-        //     ->with(['items' => function ($query) use ($subSlug) {
-        //         $query->where('title', 'like', '%' . urldecode($subSlug) . '%');
-        //     }])
-        //     ->firstOrFail();
-        $page = Page::where('slug', $slug)->firstOrFail();
-
+        $page = Page::where('slug', $slug)
+        ->with(['pageItems' => function ($query) {
+            $query->where('is_active', true) // Hanya item aktif
+                  ->orderBy('sort_order', 'asc'); // Urutkan berdasarkan sort_order
+        }])
+        ->firstOrFail();
+       
         return view('page.index', compact('page'));
+    }
+
+    public function showSubPage($slug, $subSlug)
+    {
+        $page = Page::where('slug', $slug)->firstOrFail();
+        $subPage = PageItem::where('page_id', $page->id)
+            ->where('slug', $subSlug)
+            ->where('is_active', true)
+            ->firstOrFail();
+
+        return view('pages.show-sub', compact('page', 'subPage'));
     }
 }

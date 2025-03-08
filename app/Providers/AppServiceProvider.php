@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        $menuPages = Page::where('is_active', true)->orderBy('type', 'asc')->get();
+        $menuPages = Page::where('is_active', true)->orderBy('type', 'asc')->get()->groupBy('type');
 
         View::share('menuPages', $menuPages);
     }

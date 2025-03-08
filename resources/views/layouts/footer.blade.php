@@ -2,13 +2,12 @@
     <div class="wpo-upper-footer">
         <div class="container">
             <div class="row">
-                <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="col col-lg-4 col-md-6 col-sm-12 col-12">
                     <div class="widget about-widget">
                         <div class="logo widget-title">
                             <img src="{{ asset('assets/images/logo-white-180.png') }}" alt="blog">
                         </div>
-                        <p>Management consulting includes a broad range of activities, and the many firms and
-                            their members often define these practices.</p>
+                        <p>Asosiasi Peneliti dan Inovasi Nusantara (APIN) didirikan sebagai wadah kolaboratif yang bertujuan untuk mendukung publikasi ilmiah serta pengembangan kapasitas akademik di Indonesia.</p>
                         <ul>
                             <li>
                                 <a href="#">
@@ -33,7 +32,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="col col-lg-4 col-md-6 col-sm-12 col-12">
                     <div class="widget wpo-service-link-widget">
                         <div class="widget-title">
                             <h3>Contact </h3>
@@ -48,22 +47,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="col col-lg-4 col-md-6 col-sm-12 col-12">
                     <div class="widget link-widget">
                         <div class="widget-title">
                             <h3>Services </h3>
                         </div>
-                        <ul>
-                            <li><a href="service-single.html">Advanced Analytics</a></li>
-                            <li><a href="service-single.html">Corporate Finance</a></li>
-                            <li><a href="service-single.html">Information Technology</a></li>
-                            <li><a href="service-single.html">Customer Strategy</a></li>
-                            <li><a href="service-single.html">Change Management</a></li>
-                        </ul>
+                        @if ($menuPages->has('Services'))
+                            @php
+                                $services = $menuPages['Services'];
+                                $parentPage = $services->first(); // Misalnya 'About us' sebagai parent
+                                $subPages = $services->slice(0); // Sisanya jadi sub-menu
+                            @endphp
+                            @if ($subPages->isNotEmpty())
+                                <ul>
+                                    @foreach ($subPages as $subPage)
+                                        <li>
+                                            <a href="{{ url($subPage->slug) }}">
+                                                {{ $subPage->title }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                    <li><a href="{{ url('/contact') }}">Contact US</a></li>
+                                </ul>
+                                
+                            @endif
+                        @endif
                     </div>
                 </div>
 
-                <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                {{-- <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="widget instagram">
                         <div class="widget-title">
                             <h3>Projects</h3>
@@ -83,7 +95,7 @@
                                         alt=""></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div> <!-- end container -->
     </div>
