@@ -108,7 +108,7 @@
                         </div>
                         <div class="wpo-about-icon-content">
                             <h2>{{ $aboutPage->title }}</h2>
-                            <p>{{ Str::limit(strip_tags($aboutPage->description), 300) }}</p>
+                            <p>{{ Str::limit(strip_tags($aboutPage->description), 500) }}</p>
                             <div class="signeture">
                                 {{-- <span><img src="https://wpocean.com/html/tf/consultar-live/assets/images/signeture.png"
                                         alt=""></span> --}}
@@ -129,8 +129,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="wpo-section-title">
-                        <span>Our Services</span>
-                        <h2>Explore Our Services</h2>
+                        <span>Layanan Kami</span>
+                        <h2>Jelajahi Layanan Kami</h2>
                     </div>
                 </div>
             </div>
@@ -147,12 +147,12 @@
                                 </div>
                                 <div class="wpo-service-text">
                                     <h2>
-                                        {{-- <a href="{{ url($servicesPage->slug . '/' . Str::slug($service->slug)) }}">
-                                            {{ $service->title }}
-                                        </a> --}}
-                                        <a href="#">
+                                        <a href="{{ url($servicesPage->slug . '/' . Str::slug($service->slug)) }}">
                                             {{ $service->title }}
                                         </a>
+                                        {{-- <a href="#">
+                                            {{ $service->title }}
+                                        </a> --}}
                                     </h2>
                                     <p>{{ Str::limit(strip_tags($service->description), 120) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
                                 </div>

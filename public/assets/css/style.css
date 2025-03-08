@@ -3042,6 +3042,7 @@ hero slider s2
 }
 .wpo-service-section .wpo-service-item .wpo-service-text p {
     margin-bottom: 0;
+    text-align: justify;
 }
 
 /* 3.5	wpo-pricing-section */
