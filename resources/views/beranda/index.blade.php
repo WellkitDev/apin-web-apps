@@ -154,7 +154,7 @@
                                             {{ $service->title }}
                                         </a>
                                     </h2>
-                                    <p>{{ Str::limit(strip_tags($service->description), 300) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+                                    <p>{{ Str::limit(strip_tags($service->description), 120) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                             {{ $service->title }}
                                         </a>
                                     </h2>
-                                    <p>{{ Str::limit(strip_tags($service->description), 300) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+                                    <p>{{ Str::limit(strip_tags($service->description), 50) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
                                 </div>
                             </div>
                         </div>
