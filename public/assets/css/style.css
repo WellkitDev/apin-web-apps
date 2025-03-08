@@ -3013,6 +3013,8 @@ hero slider s2
     background: #fff;
     padding: 50px;
     margin-bottom: 30px;
+    min-height: 320px;
+    max-height: 400px;
 }
 .wpo-service-section .wpo-service-item .wpo-service-icon {
     width: 82px;
