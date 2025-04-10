@@ -73,7 +73,7 @@
                                 </ul>
                             </li> --}}
                             <li><a href="{{ url('/coming-soon') }}">Kerjasama</a></li>
-                            <li><a href="{{ url('/coming-soon') }}">Jurnal</a></li>
+                            <li><a href="{{ url('https://apinusa.com/') }}" target="_blank">Jurnal</a></li>
                             <li><a href="{{ url('/coming-soon') }}">Anggota</a></li>
                         </ul>
                         <div id="dl-menu" class="dl-menuwrapper">
@@ -133,7 +133,7 @@
                                 </ul>
                             </li> --}}
                             <li><a href="{{ url('/coming-soon') }}">Kerjasama</a></li>
-                            <li><a href="{{ url('/coming-soon') }}">Jurnal</a></li>
+                            <li><a href="{{ url('https://apinusa.com/') }}" target="_blank">Jurnal</a></li>
                             <li><a href="{{ url('/coming-soon') }}">Anggota</a></li>
                             </ul>
                         </div><!-- /dl-menuwrapper -->
