@@ -63,9 +63,9 @@ use App\Http\Controllers\HomeController;
 // });
 
 //frontend Kerjasama
-// Route::get('/kerjasama', function () {
-//     return view('kerjasama.index');
-// });
+Route::get('/kerjasama', function () {
+    return view('kerjasama.index');
+});
 // Route::get('/kerjasama/detail', function () {
 //     return view('kerjasama.kerjasama-detail');
 // });

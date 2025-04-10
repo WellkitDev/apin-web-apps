@@ -18,35 +18,86 @@
     </div>
 </div>
 <!-- end of wpo-breadcumb-section-->
-<section class="wpo-blog-pg-section section-padding">
+
+<!-- start of wpo-jurnal-card-section -->
+<section class="wpo-gallery-section wpo-gallery-section-s2 section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="wpo-blog-pg-wrap association">
-                    <table class="table table-responsive table-striped">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="text-center">
-                                        <a href="{{ url('kerjasama/detail') }}">
-                                            <img src="https://simoster.org/kerjasama/kerjasama_logo_LPKDpMXpHTmRrbFFEZUt0YmZwdlpURmJzRVlvb3Z3TVphZGVEZkYyOHhoNUkxaz0=.jpeg" alt="" width="80px" height="80px">
-                                        </a>
+            <div class="col col-xs-12">
+                <div class="wpo-gallery-container">
+                    <div class="col-lg-4 col-md-6 col-12 grid">
+                        <div class="tm-portfolio mt-30 wow fadeInUp">
+                            <div class="wpo-gallery-item">
+                                <a href="{{ url('/blog/gallery/detail') }}">
+                                    <img src="https://padangtekno.com/cover/cover1.jpg" alt class="img img-responsive">
+                                    <div class="wpo-gallery-text">
+                                        <h3>Digital Analysis</h3>
+                                        <i class="ti-plus"></i>
                                     </div>
-                                </td>
-                                <td>
-                                    <div class="col-md-10">
-                                        <h4><a href="{{ url('kerjasama/detail') }}">LPKD adalah Lembaga Penelitian dan Konsultasi Dakwah</a></h4>
-                                        <p>Pendidikan</p>
-                                        <p>Pendidikan</p>
-                                        <p><a href="#">Link url kampus</a></p>
+                                </a>
+                            </div>
+                            <div class="tm-portfolio-content">
+                                <h6><a target="_blank" href="https://jurnal.padangtekno.com/index.php/jocstec">Journal Of Computer Science And Technology</a></h6>
+                                <p>ISSN : <a href="https://issn.brin.go.id/terbit?search=2985-4318" target="_blank">2985-4318</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 grid">
+                        <div class="tm-portfolio mt-30 wow fadeInUp">
+                            <div class="wpo-gallery-item">
+                                <a href="{{ url('/blog/gallery/detail') }}">
+                                    <img src="https://padangtekno.com/cover/cover1.jpg" alt class="img img-responsive">
+                                    <div class="wpo-gallery-text">
+                                        <h3>Digital Analysis</h3>
+                                        <i class="ti-plus"></i>
                                     </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </a>
+                            </div>
+                            <div class="tm-portfolio-content">
+                                <h6><a target="_blank" href="https://jurnal.padangtekno.com/index.php/jocstec">Journal Of Computer Science And Technology</a></h6>
+                                <p>ISSN : <a href="https://issn.brin.go.id/terbit?search=2985-4318" target="_blank">2985-4318</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 grid">
+                        <div class="tm-portfolio mt-30 wow fadeInUp">
+                            <div class="wpo-gallery-item">
+                                <a href="{{ url('/blog/gallery/detail') }}">
+                                    <img src="https://padangtekno.com/cover/cover1.jpg" alt class="img img-responsive">
+                                    <div class="wpo-gallery-text">
+                                        <h3>Digital Analysis</h3>
+                                        <i class="ti-plus"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tm-portfolio-content">
+                                <h6><a target="_blank" href="https://jurnal.padangtekno.com/index.php/jocstec">Journal Of Computer Science And Technology</a></h6>
+                                <p>ISSN : <a href="https://issn.brin.go.id/terbit?search=2985-4318" target="_blank">2985-4318</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 grid">
+                        <div class="tm-portfolio mt-30 wow fadeInUp">
+                            <div class="wpo-gallery-item">
+                                <a href="{{ url('/blog/gallery/detail') }}">
+                                    <img src="https://padangtekno.com/cover/cover1.jpg" alt class="img img-responsive">
+                                    <div class="wpo-gallery-text">
+                                        <h3>Digital Analysis</h3>
+                                        <i class="ti-plus"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tm-portfolio-content">
+                                <h6><a target="_blank" href="https://jurnal.padangtekno.com/index.php/jocstec">Journal Of Computer Science And Technology</a></h6>
+                                <p>ISSN : <a href="https://issn.brin.go.id/terbit?search=2985-4318" target="_blank">2985-4318</a></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end of wpo-jurnal-card-section -->
+
 @endsection
