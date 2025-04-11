@@ -49,7 +49,9 @@
                                         </div>
                                         <div class="wpo-solutions-text">
                                             <h2><a href="{{ url($page->slug . '/' . $item->slug) }}">{{ $item->title }}</a></h2>
-                                            <p>{{ $item->description ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+                                            {{-- <p>{{ $item->description ?? 'The lower-numbered purposes are better understood and practiced' }}</p> --}}
+                                            <p>{{ Str::limit(strip_tags($item->description), 120) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+
                                         </div>
                                     </div>
                                 </div>
