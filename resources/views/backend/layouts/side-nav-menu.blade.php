@@ -4,12 +4,12 @@
     <!-- Brand Logo -->
     <a href="index.html" class="logo">
         <span class="logo-light">
-            <span class="logo-lg"><img src="backend/assets/images/logo-light.png" alt="logo"></span>
+            <span class="logo-lg"><img src="{{ asset('assets/images/logo-white-sm.png') }}" alt="logo"></span>
             <span class="logo-sm"><img src="backend/assets/images/logo-sm-light.png" alt="small logo"></span>
         </span>
 
         <span class="logo-dark">
-            <span class="logo-lg"><img src="backend/assets/images/logo-dark.png" alt="dark logo"></span>
+            <span class="logo-lg"><img src="{{ asset('assets/images/logo-sm.png') }}" alt="dark logo"></span>
             <span class="logo-sm"><img src="backend/assets/images/logo-sm.png" alt="small logo"></span>
         </span>
     </a>
@@ -39,9 +39,17 @@
             </li>
 
             <li class="side-nav-title">Customization</li>
-            
+
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
+                <a href="{{ route('pages.index') }}" class="side-nav-link">
+                    <span class="menu-icon"><i class="mdi mdi-folder-cog-outline"></i></span>
+                    <span class="menu-text">Pages Control</span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false"
+                    aria-controls="sidebarPagesAuth" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-lock-outline"></i></span>
                     <span class="menu-text"> Auth Pages </span>
                     <span class="menu-arrow"></span>
@@ -74,7 +82,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
+                    class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-file-document-outline"></i></span>
                     <span class="menu-text"> Pages </span>
                     <span class="menu-arrow"></span>
@@ -121,7 +130,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarPagesError" aria-expanded="false" aria-controls="sidebarPagesError" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarPagesError" aria-expanded="false"
+                    aria-controls="sidebarPagesError" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-alert-circle-outline"></i></span>
                     <span class="menu-text"> Error Pages </span>
                     <span class="menu-arrow"></span>
@@ -147,17 +157,13 @@
                 </div>
             </li>
 
-            <li class="side-nav-item">
-                <a href="{{ route('pages.index') }}" class="side-nav-link">
-                    <span class="menu-icon"><i class="mdi mdi-folder-cog-outline"></i></span>
-                    <span class="menu-text">Pages Control</span>
-                </a>
-            </li>
+
 
             <li class="side-nav-title">Components</li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false" aria-controls="sidebarBaseUI" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false"
+                    aria-controls="sidebarBaseUI" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-format-underline"></i></span>
                     <span class="menu-text"> Base UI </span>
                     <span class="menu-arrow"></span>
@@ -300,7 +306,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarExtendedUI" aria-expanded="false" aria-controls="sidebarExtendedUI" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarExtendedUI" aria-expanded="false"
+                    aria-controls="sidebarExtendedUI" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-briefcase-outline"></i></span>
                     <span class="menu-text"> Extended UI </span>
                     <span class="menu-arrow"></span>
@@ -347,7 +354,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarWidgets" aria-expanded="false" aria-controls="sidebarWidgets" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarWidgets" aria-expanded="false"
+                    aria-controls="sidebarWidgets" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-puzzle-outline"></i></span>
                     <span class="menu-text"> Widgets </span>
                     <span class="menu-arrow"></span>
@@ -369,7 +377,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons"
+                    class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-feather"></i></span>
                     <span class="menu-text"> Icons </span>
                     <span class="menu-arrow"></span>
@@ -411,7 +420,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCharts" aria-expanded="false" aria-controls="sidebarCharts" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarCharts" aria-expanded="false"
+                    aria-controls="sidebarCharts" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-chart-pie-outline"></i></span>
                     <span class="menu-text"> Charts </span>
                     <span class="menu-arrow"></span>
@@ -463,7 +473,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms"
+                    class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-form-select"></i></span>
                     <span class="menu-text"> Forms </span>
                     <span class="menu-arrow"></span>
@@ -525,7 +536,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false" aria-controls="sidebarTables" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false"
+                    aria-controls="sidebarTables" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-table"></i></span>
                     <span class="menu-text"> Tables </span>
                     <span class="menu-arrow"></span>
@@ -552,7 +564,8 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps"
+                    class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-map-marker-circle"></i></span>
                     <span class="menu-text"> Maps </span>
                     <span class="menu-arrow"></span>
@@ -576,7 +589,8 @@
             <li class="side-nav-title">More</li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarLayouts" aria-expanded="false" aria-controls="sidebarLayouts" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarLayouts" aria-expanded="false"
+                    aria-controls="sidebarLayouts" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-star-box-multiple-outline"></i></span>
                     <span class="menu-text"> Layouts </span>
                     <span class="menu-arrow"></span>
@@ -585,18 +599,20 @@
                     <ul class="sub-menu">
                         <li class="side-nav-item">
                             <a href="layouts-boxed.html" target="_blank" class="side-nav-link">Vertical Boxed</a>
-                        </li>   
+                        </li>
                         <li class="side-nav-item">
                             <a href="layouts-horizontal.html" target="_blank" class="side-nav-link">Horizontal</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="layouts-horizontal-boxed.html" target="_blank" class="side-nav-link">Horizontal Boxed</a>
+                            <a href="layouts-horizontal-boxed.html" target="_blank" class="side-nav-link">Horizontal
+                                Boxed</a>
                         </li>
                         <li class="side-nav-item">
                             <a href="layouts-full.html" target="_blank" class="side-nav-link">Full View</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="layouts-fullscreen.html" target="_blank" class="side-nav-link">Fullscreen View</a>
+                            <a href="layouts-fullscreen.html" target="_blank" class="side-nav-link">Fullscreen
+                                View</a>
                         </li>
                         <li class="side-nav-item">
                             <a href="layouts-hover.html" target="_blank" class="side-nav-link">Hover Menu</a>
@@ -607,13 +623,14 @@
                         <li class="side-nav-item">
                             <a href="layouts-icon-view.html" target="_blank" class="side-nav-link">Icon View</a>
                         </li>
-               
+
                     </ul>
                 </div>
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false" aria-controls="sidebarMultiLevel" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false"
+                    aria-controls="sidebarMultiLevel" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-card-multiple-outline"></i></span>
                     <span class="menu-text"> Multi Level </span>
                     <span class="menu-arrow"></span>
@@ -621,7 +638,8 @@
                 <div class="collapse" id="sidebarMultiLevel">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false" aria-controls="sidebarSecondLevel" class="side-nav-link">
+                            <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false"
+                                aria-controls="sidebarSecondLevel" class="side-nav-link">
                                 <span class="menu-text"> Second Level </span>
                                 <span class="menu-arrow"></span>
                             </a>
@@ -641,7 +659,8 @@
                             </div>
                         </li>
                         <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false" aria-controls="sidebarThirdLevel" class="side-nav-link">
+                            <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false"
+                                aria-controls="sidebarThirdLevel" class="side-nav-link">
                                 <span class="menu-text"> Third Level </span>
                                 <span class="menu-arrow"></span>
                             </a>
@@ -651,7 +670,8 @@
                                         <a href="javascript: void(0);" class="side-nav-link">Item 1</a>
                                     </li>
                                     <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false" aria-controls="sidebarFourthLevel" class="side-nav-link">
+                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false"
+                                            aria-controls="sidebarFourthLevel" class="side-nav-link">
                                             <span class="menu-text"> Item 2 </span>
                                             <span class="menu-arrow"></span>
                                         </a>
