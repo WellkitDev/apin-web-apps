@@ -26,8 +26,7 @@
         <div class="right-vec">
             <div class="right-img">
                 <div class="r-img">
-                    <img src="https://wpocean.com/html/tf/consultar-live/assets/images/slider/right-img2.png"
-                        alt="">
+                    <img src="{{ asset('assets/images/slider/home.png') }}" alt="">
                 </div>
                 <div class="wpo-happy-client">
                     <div class="wpo-happy-client-text">
@@ -124,68 +123,70 @@
     <!-- end of wpo-about-section -->
     <!-- start of wpo-service-section -->
     @if ($servicesPage || $services)
-    <section class="wpo-service-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="wpo-section-title">
-                        <span>Layanan Kami</span>
-                        <h2>Jelajahi Layanan Kami</h2>
+        <section class="wpo-service-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wpo-section-title">
+                            <span>Layanan Kami</span>
+                            <h2>Jelajahi Layanan Kami</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            @if ($servicesPage && $servicesPage->pageItems->isNotEmpty())
-                <div class="row">
-                    @foreach ($servicesPage->pageItems as $service)
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="wpo-service-item">
-                                <div class="wpo-service-icon">
-                                    <div class="icon">
-                                        <img src="{{ $service->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"
-                                             alt="{{ $service->title }}">
+                @if ($servicesPage && $servicesPage->pageItems->isNotEmpty())
+                    <div class="row">
+                        @foreach ($servicesPage->pageItems as $service)
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-icon">
+                                        <div class="icon">
+                                            <img src="{{ $service->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"
+                                                alt="{{ $service->title }}">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="wpo-service-text">
-                                    <h2>
-                                        <a href="{{ url($servicesPage->slug . '/' . Str::slug($service->slug)) }}">
-                                            {{ $service->title }}
-                                        </a>
-                                        {{-- <a href="#">
+                                    <div class="wpo-service-text">
+                                        <h2>
+                                            <a href="{{ url($servicesPage->slug . '/' . Str::slug($service->slug)) }}">
+                                                {{ $service->title }}
+                                            </a>
+                                            {{-- <a href="#">
                                             {{ $service->title }}
                                         </a> --}}
-                                    </h2>
-                                    <p>{{ Str::limit(strip_tags($service->description), 120) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @elseif ($services && $services->isNotEmpty())
-                <div class="row">
-                    @foreach ($services as $service)
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="wpo-service-item">
-                                <div class="wpo-service-icon">
-                                    <div class="icon">
-                                        <img src="{{ $service->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"
-                                             alt="{{ $service->title }}">
+                                        </h2>
+                                        <p>{{ Str::limit(strip_tags($service->description), 120) ?? 'The lower-numbered purposes are better understood and practiced' }}
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="wpo-service-text">
-                                    <h2>
-                                        <a href="{{ url('layanan/' . Str::slug($service->title)) }}">
-                                            {{ $service->title }}
-                                        </a>
-                                    </h2>
-                                    <p>{{ Str::limit(strip_tags($service->description), 50) ?? 'The lower-numbered purposes are better understood and practiced' }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                @elseif ($services && $services->isNotEmpty())
+                    <div class="row">
+                        @foreach ($services as $service)
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-icon">
+                                        <div class="icon">
+                                            <img src="{{ $service->image ?? 'https://wpocean.com/html/tf/consultar-live/assets/images/icon/document.svg' }}"
+                                                alt="{{ $service->title }}">
+                                        </div>
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <h2>
+                                            <a href="{{ url('layanan/' . Str::slug($service->title)) }}">
+                                                {{ $service->title }}
+                                            </a>
+                                        </h2>
+                                        <p>{{ Str::limit(strip_tags($service->description), 50) ?? 'The lower-numbered purposes are better understood and practiced' }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            @endif
-        </div>
-    </section>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+        </section>
     @endif
     <!-- end of wpo-service-section -->
 
