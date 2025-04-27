@@ -7,10 +7,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="wpo-breadcumb-wrap">
-                        <h2>Coming Soon</h2>
+                        <h2>404</h2>
                         <ul>
                             <li><a href="{{ url('/') }}">Beranda</a></li>
-                            <li><span>Coming Soon</span></li>
+                            <li><span>404</span></li>
                         </ul>
                     </div>
                 </div>
