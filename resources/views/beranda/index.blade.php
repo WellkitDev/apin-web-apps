@@ -1,6 +1,104 @@
 @extends('layouts.apps')
 
 @section('content')
+    <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-609bde0 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+        data-id="609bde0" data-element_type="section">
+        <div class="elementor-container elementor-column-gap-no">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7e3667d"
+                data-id="7e3667d" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-459e68b elementor-widget elementor-widget-wpo-consultar_slider"
+                        data-id="459e68b" data-element_type="widget" data-widget_type="wpo-consultar_slider.default">
+                        <div class="elementor-widget-container">
+                            <div class="wpo-hero-slider">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="slide-inner slide-bg-image"
+                                                data-background="{{ asset('assets/images/slider/dashboard-1.jpg') }}">
+                                                <div class="container">
+                                                    {{-- <div class="slide-content">
+                                                        <div data-swiper-parallax="200" class="wpo-hero-title-top">
+                                                        </div>
+                                                        <div data-swiper-parallax="300" class="slide-title">
+                                                            <h2>Helping You Solve Your Problems</h2>
+                                                        </div>
+                                                        <div data-swiper-parallax="400" class="slide-text">
+                                                            <p>Our company is one of the world’s leading
+                                                                consulting firms. We help them make better
+                                                                decisions.
+                                                            </p>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div data-swiper-parallax="500" class="slide-btns"><a
+                                                                href="https://wpocean.com/wp/consultar/contact/"
+                                                                class="theme-btn">Get Started</a></div>
+                                                    </div> --}}
+                                                </div>
+                                            </div> <!-- end slide-inner -->
+                                        </div> <!-- end swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <div class="slide-inner slide-bg-image"
+                                                data-background="{{ asset('assets/images/slider/dashboard-2.jpg') }}">
+                                                <div class="container">
+                                                    {{-- <div class="slide-content">
+                                                        <div data-swiper-parallax="200" class="wpo-hero-title-top">
+                                                        </div>
+                                                        <div data-swiper-parallax="300" class="slide-title">
+                                                            <h2>Most Popular Consulting Agency</h2>
+                                                        </div>
+                                                        <div data-swiper-parallax="400" class="slide-text">
+                                                            <p>Our company is one of the world’s leading
+                                                                consulting firms. We help them make better
+                                                                decisions.
+                                                            </p>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div data-swiper-parallax="500" class="slide-btns"><a href="#"
+                                                                class="theme-btn">Get
+                                                                Started</a></div>
+                                                    </div> --}}
+                                                </div>
+                                            </div> <!-- end slide-inner -->
+                                        </div> <!-- end swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <div class="slide-inner slide-bg-image"
+                                                data-background="{{ asset('assets/images/slider/dashboard-3.jpg') }}">
+                                                <div class="container">
+                                                    {{-- <div class="slide-content">
+                                                        <div data-swiper-parallax="200" class="wpo-hero-title-top">
+                                                        </div>
+                                                        <div data-swiper-parallax="300" class="slide-title">
+                                                            <h2>Most Popular Consulting Agency</h2>
+                                                        </div>
+                                                        <div data-swiper-parallax="400" class="slide-text">
+                                                            <p>Our company is one of the world’s leading
+                                                                consulting firms. We help them make better
+                                                                decisions.
+                                                            </p>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div data-swiper-parallax="500" class="slide-btns"><a href="#"
+                                                                class="theme-btn">Get
+                                                                Started</a></div>
+                                                    </div> --}}
+                                                </div>
+                                            </div> <!-- end slide-inner -->
+                                        </div> <!-- end swiper-slide -->
+                                    </div>
+                                    <!-- swipper controls -->
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- start of wpo-hero-section-1 -->
     <section class="wpo-hero-section-1 wpo-hero-section-2">
         <div class="container">
