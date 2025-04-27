@@ -16,4 +16,10 @@ class AdminCategoryController extends Controller
         // return view('admin.categories.index', compact('categories'));
         return view('backend.blog.categories.index');
     }
+
+    //
+    public function create()
+    {
+        return view('backend.blog.categories.create');
+    }
 }
