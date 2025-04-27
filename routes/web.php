@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\PageItemController;
+use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -122,6 +123,10 @@ Route::post('pages-item/create', [PageItemController::class, 'store'])->name('pa
 Route::get('pages-item/{slug}', [PageItemController::class, 'edit'])->name('page-item.edit');
 Route::post('pages-item/{slug}', [PageItemController::class, 'update'])->name('page-item.update');
 Route::delete('pages-item/delete/{id}', [PageItemController::class, 'destroy'])->name('page-item.destroy');
+
+//backend BlogCategoryController
+
+Route::get('blog-category', [AdminCategoryController::class, 'index'])->name('category.index');
 
 // Frontend show page
 

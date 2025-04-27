@@ -79,7 +79,7 @@
                 <div class="collapse" id="sidebarBlog">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="pages-starter.html" class="side-nav-link">
+                            <a href="{{ route('category.index') }}" class="side-nav-link">
                                 <span class="menu-text">Category</span>
                             </a>
                         </li>
