@@ -40,12 +40,63 @@
 
             <li class="side-nav-title">Customization</li>
 
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a href="{{ route('pages.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-folder-cog-outline"></i></span>
                     <span class="menu-text">Pages Control</span>
                 </a>
+            </li> --}}
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
+                    class="side-nav-link">
+                    <span class="menu-icon"><i class="mdi mdi-folder-cog-outline"></i></span>
+                    <span class="menu-text"> Pages Control</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPages">
+                    <ul class="sub-menu">
+                        <li class="side-nav-item">
+                            <a href="{{ route('pages.index') }}" class="side-nav-link">
+                                <span class="menu-text">Pages</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="{{ route('page-item.index') }}" class="side-nav-link">
+                                <span class="menu-text">Sub Pages</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarBlog" aria-expanded="false" aria-controls="sidebarBlog"
+                    class="side-nav-link">
+                    <span class="menu-icon"><i class="mdi mdi-form-select"></i></span>
+                    <span class="menu-text"> Blog </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarBlog">
+                    <ul class="sub-menu">
+                        <li class="side-nav-item">
+                            <a href="pages-starter.html" class="side-nav-link">
+                                <span class="menu-text">Category</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="pages-starter.html" class="side-nav-link">
+                                <span class="menu-text">Sub Category</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="pages-starter.html" class="side-nav-link">
+                                <span class="menu-text">Article</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false"
@@ -81,7 +132,7 @@
                 </div>
             </li>
 
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
                     class="side-nav-link">
                     <span class="menu-icon"><i class="mdi mdi-file-document-outline"></i></span>
@@ -127,7 +178,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPagesError" aria-expanded="false"
