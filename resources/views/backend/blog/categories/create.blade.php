@@ -44,7 +44,7 @@
                         <p class="text-muted">Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading
                             for documentation on required classes, form layout, and more.</p>
                         <div class="row">
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="col-lg-6 sm-12 mb-2">
@@ -66,8 +66,8 @@
                                     </div>
                                     <div class="col-lg-12 sm-12">
                                         <select class="form-select" name="is_active" id="is_active">
-                                            <option value="true">On</option>
-                                            <option value="false">Off</option>
+                                            <option value="0">On</option>
+                                            <option value="1">Off</option>
                                         </select>
                                     </div>
                                     @if ($errors->has('is_active'))
