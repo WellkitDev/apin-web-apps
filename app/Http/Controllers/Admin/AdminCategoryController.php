@@ -45,5 +45,14 @@ class AdminCategoryController extends Controller
         return redirect()->back()->with('success', 'Category created successfully');
     }
 
+    //
+    public function edit(string $slug)
+    {
+        $slug = rawurldecode($slug);
+        $categories = Category::where('category_slug', $slug)->first();
+
+        return view('backend.blog.categories.edit', compact('categories'));
+    }
+
 
 }
