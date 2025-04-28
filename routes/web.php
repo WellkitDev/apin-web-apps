@@ -131,6 +131,7 @@ Route::get('blog-category/create', [AdminCategoryController::class, 'create'])->
 Route::post('blog-category/create', [AdminCategoryController::class, 'store'])->name('category.store');
 Route::get('blog-category/{slug}', [AdminCategoryController::class, 'edit'])->name('category.edit');
 Route::post('blog-category/{slug}', [AdminCategoryController::class, 'update'])->name('category.update');
+Route::delete('blog-category/delete/{slug}', [AdminCategoryController::class, 'destroy'])->name('category.destroy');
 
 // Frontend show page
 
