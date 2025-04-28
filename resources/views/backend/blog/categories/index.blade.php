@@ -53,7 +53,11 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->category_name }}</td>
                                     <td>{{ $item->category_order }}</td>
-                                    <td>{{ $item->show_on_menu }}</td>
+                                    @if ($item->show_on_menu == 0)
+                                        <td>Show</td>
+                                    @else
+                                        <td>Off</td>
+                                    @endif
                                     <td>
                                         <a href="" class="btn btn-primary">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
