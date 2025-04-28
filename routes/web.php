@@ -130,6 +130,7 @@ Route::get('blog-category', [AdminCategoryController::class, 'index'])->name('ca
 Route::get('blog-category/create', [AdminCategoryController::class, 'create'])->name('category.create');
 Route::post('blog-category/create', [AdminCategoryController::class, 'store'])->name('category.store');
 Route::get('blog-category/{slug}', [AdminCategoryController::class, 'edit'])->name('category.edit');
+Route::post('blog-category/{slug}', [AdminCategoryController::class, 'update'])->name('category.update');
 
 // Frontend show page
 
