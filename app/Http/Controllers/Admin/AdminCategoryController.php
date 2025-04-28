@@ -95,5 +95,17 @@ class AdminCategoryController extends Controller
         return redirect()->route('category.index')->with('success', 'Category updated successfully');
     }
 
+    //
+    public function destroy(string $slug)
+    {
+        $slug = rawurldecode($slug);
+        $categories = Category::where('category_slug', $slug)->firstOrFail(); // Use firstOrFail for consistency
+
+        $categories->delete();
+
+        return redirect()->route('category.index')->with('success', 'Category delete successfully');
+
+    }
+
 
 }
