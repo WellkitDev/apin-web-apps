@@ -35,7 +35,8 @@
                         <p class="text-muted">Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading
                             for documentation on required classes, form layout, and more.</p>
                         <div class="row">
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('category.update', ['slug' => $categories->category_slug]) }}"
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="col-lg-6 sm-12 mb-2">
