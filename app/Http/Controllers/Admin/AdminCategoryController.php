@@ -30,7 +30,7 @@ class AdminCategoryController extends Controller
         $request->validate([
             'title' => 'required|string|max:50',
             'is_active' => 'required',
-            'order' => 'required',
+            'order' => 'required|numeric',
         ]);
 
         $category = new Category();
