@@ -41,13 +41,25 @@
                             style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Category</th>
                                     <th>Order</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-
+                            @foreach ($categories as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->category_name }}</td>
+                                    <td>{{ $item->category_order }}</td>
+                                    <td>{{ $item->show_on_menu }}</td>
+                                    <td>
+                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <a href="" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             <tbody>
 
                             </tbody>
@@ -66,7 +78,8 @@
     <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
 
     <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
+    </script>
 
     <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
