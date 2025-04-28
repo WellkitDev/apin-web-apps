@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\PageItemController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BlogArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,9 +51,10 @@ use App\Http\Controllers\HomeController;
 // });
 
 //frontend Blog
-// Route::get('/blog/artikel', function () {
-//     return view('blog.artikel');
-// });
+Route::get('/blog/artikel', function () {
+    return view('blog.artikel');
+});
+Route::get('blog/artikel', [BlogArticleController::class, 'index'])->name('blog.article.index');
 // Route::get('/blog/artikel/detail', function () {
 //     return view('blog.artikel-details');
 // });
