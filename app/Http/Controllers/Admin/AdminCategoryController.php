@@ -13,7 +13,7 @@ class AdminCategoryController extends Controller
     public function index()
     {
         // Fetch all categories from the database
-        $categories = Category::all();
+        $categories = Category::orderBy('category_order', 'asc')->get();
         // Return the view with the categories data
         // return view('admin.categories.index', compact('categories'));
         return view('backend.blog.categories.index', compact('categories'));
