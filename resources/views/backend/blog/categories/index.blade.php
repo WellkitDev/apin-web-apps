@@ -61,7 +61,13 @@
                                     <td>
                                         <a href="{{ route('category.edit', ['slug' => rawurlencode($item->category_slug)]) }}"
                                             class="btn btn-primary">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <form action="{{ route('category.destroy', ['slug' => $item->category_slug]) }}"
+                                            method="POST" style="display:inline-block;">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip"
+                                                title='Delete'>Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
