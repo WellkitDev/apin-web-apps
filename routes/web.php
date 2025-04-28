@@ -129,6 +129,7 @@ Route::delete('pages-item/delete/{id}', [PageItemController::class, 'destroy'])-
 Route::get('blog-category', [AdminCategoryController::class, 'index'])->name('category.index');
 Route::get('blog-category/create', [AdminCategoryController::class, 'create'])->name('category.create');
 Route::post('blog-category/create', [AdminCategoryController::class, 'store'])->name('category.store');
+Route::get('blog-category/{slug}', [AdminCategoryController::class, 'edit'])->name('category.edit');
 
 // Frontend show page
 

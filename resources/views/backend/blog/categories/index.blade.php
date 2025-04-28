@@ -59,7 +59,8 @@
                                         <td>Off</td>
                                     @endif
                                     <td>
-                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('category.edit', ['slug' => rawurlencode($item->category_slug)]) }}"
+                                            class="btn btn-primary">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
