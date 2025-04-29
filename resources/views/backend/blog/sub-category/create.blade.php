@@ -44,7 +44,7 @@
                         <p class="text-muted">Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading
                             for documentation on required classes, form layout, and more.</p>
                         <div class="row">
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('subcategory.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-lg-6 sm-12 mb-2">
                                     <div class="col-lg-12">
@@ -53,7 +53,7 @@
                                     <div class="col-lg-12 sm-12">
                                         <select class="form-select" data-toggle="select2" name="category_name"
                                             id="category_name">
-                                            <option disabled>Select categories</option>
+                                            <option selected disabled>Select categories</option>
                                             @foreach ($categories as $item)
                                                 <option value="{{ $item->id }}">{{ $item->category_name }}</option>
                                             @endforeach
@@ -73,7 +73,7 @@
                                             placeholder="Education">
                                     </div>
                                     @if ($errors->has('sub_title'))
-                                        <p style="color: red;">{{ $errors->first('title') }}</p>
+                                        <p style="color: red;">{{ $errors->first('sub_title') }}</p>
                                     @endif
                                 </div>
 
