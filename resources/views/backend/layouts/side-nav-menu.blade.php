@@ -84,7 +84,7 @@
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="pages-starter.html" class="side-nav-link">
+                            <a href="{{ route('subcategory.index') }}" class="side-nav-link">
                                 <span class="menu-text">Sub Category</span>
                             </a>
                         </li>
