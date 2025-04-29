@@ -134,6 +134,7 @@ Route::delete('blog-category/delete/{slug}', [AdminCategoryController::class, 'd
 
 //backend BlogSubCategoryController
 Route::get('blog-subcategory', [AdminSubCategoryController::class, 'index'])->name('subcategory.index');
+Route::get('blog-subcategory/create', [AdminSubCategoryController::class, 'create'])->name('subcategory.create');
 
 
 // Frontend show page
