@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-header border-bottom border-dashed d-flex align-items-center">
                         <h4 class="header-title">All Sub Categories</h4>
-                        <a href="" class="btn btn-outline-primary ms-auto">Create</a>
+                        <a href="{{ route('subcategory.create') }}" class="btn btn-outline-primary ms-auto">Create</a>
                     </div>
 
                     <div class="card-body pt-2">
