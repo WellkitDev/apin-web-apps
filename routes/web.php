@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\PageItemController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminSubCategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogArticleController;
 
@@ -51,9 +52,6 @@ use App\Http\Controllers\BlogArticleController;
 // });
 
 //frontend Blog
-Route::get('/blog/artikel', function () {
-    return view('blog.artikel');
-});
 Route::get('blog/artikel', [BlogArticleController::class, 'index'])->name('blog.article.index');
 // Route::get('/blog/artikel/detail', function () {
 //     return view('blog.artikel-details');
@@ -127,13 +125,16 @@ Route::post('pages-item/{slug}', [PageItemController::class, 'update'])->name('p
 Route::delete('pages-item/delete/{id}', [PageItemController::class, 'destroy'])->name('page-item.destroy');
 
 //backend BlogCategoryController
-
 Route::get('blog-category', [AdminCategoryController::class, 'index'])->name('category.index');
 Route::get('blog-category/create', [AdminCategoryController::class, 'create'])->name('category.create');
 Route::post('blog-category/create', [AdminCategoryController::class, 'store'])->name('category.store');
 Route::get('blog-category/{slug}', [AdminCategoryController::class, 'edit'])->name('category.edit');
 Route::post('blog-category/{slug}', [AdminCategoryController::class, 'update'])->name('category.update');
 Route::delete('blog-category/delete/{slug}', [AdminCategoryController::class, 'destroy'])->name('category.destroy');
+
+//backend BlogSubCategoryController
+Route::get('blog-subcategory', [AdminSubCategoryController::class, 'index'])->name('subcategory.index');
+
 
 // Frontend show page
 
