@@ -59,7 +59,8 @@
                                         <td>Off</td>
                                     @endif
                                     <td>
-                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('subcategory.edit', ['slug' => $item->slug_sub]) }}"
+                                            class="btn btn-primary">Edit</a>
                                         <form action="" method="POST" style="display:inline-block;">
                                             @method('DELETE')
                                             @csrf
