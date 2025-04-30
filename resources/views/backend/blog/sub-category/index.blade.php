@@ -48,7 +48,27 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-
+                            @foreach ($subCategory as $item)
+                                <tr>
+                                    <td>{{ $item->subcategory_name }}</td>
+                                    <td>{{ $item->category->category_name }}</td>
+                                    <td>{{ $item->sub_order }}</td>
+                                    @if ($item->show_on_menu == 0)
+                                        <td>Show</td>
+                                    @else
+                                        <td>Off</td>
+                                    @endif
+                                    <td>
+                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <form action="" method="POST" style="display:inline-block;">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip"
+                                                title='Delete'>Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                             <tbody>
 
                             </tbody>
@@ -67,7 +87,8 @@
     <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
 
     <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
+    </script>
 
     <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
