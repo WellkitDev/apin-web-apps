@@ -14,7 +14,8 @@ class AdminSubCategoryController extends Controller
     //
     public function index()
     {
-        return view('backend.blog.sub-category.index');
+        $subCategory = SubCategory::with('category')->orderBy('sub_order', 'asc')->get();
+        return view('backend.blog.sub-category.index', compact('subCategory'));
     }
 
     //
