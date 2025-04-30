@@ -136,6 +136,9 @@ Route::delete('blog-category/delete/{slug}', [AdminCategoryController::class, 'd
 Route::get('blog-subcategory', [AdminSubCategoryController::class, 'index'])->name('subcategory.index');
 Route::get('blog-subcategory/create', [AdminSubCategoryController::class, 'create'])->name('subcategory.create');
 Route::post('blog-subcategory/create', [AdminSubCategoryController::class, 'store'])->name('subcategory.store');
+Route::get('blog-subcategory/{slug}', [AdminSubCategoryController::class, 'edit'])->name('subcategory.edit');
+Route::post('blog-subcategory/{slug}', [AdminSubCategoryController::class, 'update'])->name('subcategory.update');
+Route::delete('blog-subcategory/{slug}/delete', [AdminSubCategoryController::class, 'destroy'])->name('subcategory.destroy');
 
 
 // Frontend show page
