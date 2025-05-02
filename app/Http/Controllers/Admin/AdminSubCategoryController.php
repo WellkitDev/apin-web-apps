@@ -100,4 +100,14 @@ class AdminSubCategoryController extends Controller
         return redirect()->route('subcategory.index')->with('success', 'Sub Category updated successfully');
 
     }
+
+    public function destroy(string $slug)
+    {
+        // $slug = rawurldecode($slug);
+        $subCategory = SubCategory::where('slug_sub', $slug)->firstOrFail(); // Use firstOrFail for consistency
+
+        $subCategory->delete();
+
+        return redirect()->route('subcategory.index')->with('success', 'Sub Category delete successfully');
+    }
 }
