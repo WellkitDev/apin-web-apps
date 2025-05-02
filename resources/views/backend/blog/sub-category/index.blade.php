@@ -61,7 +61,8 @@
                                     <td>
                                         <a href="{{ route('subcategory.edit', ['slug' => $item->slug_sub]) }}"
                                             class="btn btn-primary">Edit</a>
-                                        <form action="" method="POST" style="display:inline-block;">
+                                        <form action="{{ route('subcategory.destroy', ['slug' => $item->slug_sub]) }}"
+                                            method="POST" style="display:inline-block;">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip"
