@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\PageItemController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminSubCategoryController;
+use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogArticleController;
 
@@ -139,6 +140,14 @@ Route::post('blog-subcategory/create', [AdminSubCategoryController::class, 'stor
 Route::get('blog-subcategory/{slug}', [AdminSubCategoryController::class, 'edit'])->name('subcategory.edit');
 Route::post('blog-subcategory/{slug}', [AdminSubCategoryController::class, 'update'])->name('subcategory.update');
 Route::delete('blog-subcategory/{slug}/delete', [AdminSubCategoryController::class, 'destroy'])->name('subcategory.destroy');
+
+//backend BlogSubCategoryController
+Route::get('article', [AdminArticleController::class, 'index'])->name('article.index');
+Route::get('article/create', [AdminArticleController::class, 'create'])->name('article.create');
+Route::post('article/create', [AdminArticleController::class, 'store'])->name('article.store');
+Route::get('article/{slug}', [AdminArticleController::class, 'edit'])->name('article.edit');
+Route::post('article/{slug}', [AdminArticleController::class, 'update'])->name('article.update');
+Route::delete('article/{slug}/delete', [AdminArticleController::class, 'destroy'])->name('article.destroy');
 
 
 // Frontend show page
