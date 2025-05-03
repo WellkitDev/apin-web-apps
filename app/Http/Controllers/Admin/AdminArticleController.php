@@ -16,4 +16,34 @@ class AdminArticleController extends Controller
         //
         return view('backend.blog.artikel.index');
     }
+
+    //
+    public function create()
+    {
+        //
+        return view('backend.blog.artikel.create');
+    }
+
+    //
+    public function store()
+    {
+        //
+        return redirect()->back()->with('success', 'Article added Successfully');
+    }
+
+    //
+    public function edit()
+    {
+        //
+        return view('backend.blog.artikel.edit');
+    }
+
+    //
+    public function update()
+    {
+        //
+        return redirect()->back()->with('success', 'Article updated Successfully');
+    }
+
+
 }
