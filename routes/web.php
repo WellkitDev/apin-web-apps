@@ -53,7 +53,7 @@ use App\Http\Controllers\BlogArticleController;
 // });
 
 //frontend Blog
-Route::get('blog/artikel', [BlogArticleController::class, 'index'])->name('blog.article.index');
+// Route::get('blog/artikel', [BlogArticleController::class, 'index'])->name('blog.article.index');
 // Route::get('/blog/artikel/detail', function () {
 //     return view('blog.artikel-details');
 // });
@@ -148,6 +148,9 @@ Route::post('article/create', [AdminArticleController::class, 'store'])->name('a
 Route::get('article/{slug}', [AdminArticleController::class, 'edit'])->name('article.edit');
 Route::post('article/{slug}', [AdminArticleController::class, 'update'])->name('article.update');
 Route::delete('article/{slug}/delete', [AdminArticleController::class, 'destroy'])->name('article.destroy');
+
+//frontend blog article
+Route::get('blog/artikel', [AdminArticleController::class, 'show'])->name('article.show');
 
 
 // Frontend show page
