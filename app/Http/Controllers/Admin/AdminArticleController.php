@@ -18,7 +18,8 @@ class AdminArticleController extends Controller
     public function index()
     {
         //
-        return view('backend.blog.artikel.index');
+        $articles = Article::with('subCategory.category')->get();
+        return view('backend.blog.artikel.index', compact('articles'));
     }
 
     //
@@ -141,10 +142,13 @@ class AdminArticleController extends Controller
     }
 
     //
-    public function edit()
+    public function edit(Request $request, string $slug)
     {
         //
-        return view('backend.blog.artikel.edit');
+        $articles = Article::where('slug', $slug)->firstOrFail();
+        $subCategories = SubCategory::with('category')->get();
+        $tags = Tag::where('article_id', $articles->id)->get();
+        return view('backend.blog.artikel.edit', compact('articles','subCategories','tags'));
     }
 
     //
