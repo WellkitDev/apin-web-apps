@@ -49,14 +49,23 @@
                                 </tr>
                             </thead>
                             @foreach ($articles as $item)
-                                <td>{{ $item->article_title }}</td>
-                                <td><img src="{{ $item->article_img }}" alt="" width="30px"></td>
-                                <td>{{ $item->subCategory->subcategory_name }}</td>
-                                <td>{{ $item->subCategory->category->category_name }}</td>
-                                <td>
-                                    <a href="{{ route('article.edit', ['slug' => $item->slug]) }}"
-                                        class="btn btn-primary">Edit</a>
-                                </td>
+                                <tr>
+                                    <td>{{ $item->article_title }}</td>
+                                    <td><img src="{{ $item->article_img }}" alt="" width="30px"></td>
+                                    <td>{{ $item->subCategory->subcategory_name }}</td>
+                                    <td>{{ $item->subCategory->category->category_name }}</td>
+                                    <td>
+                                        <a href="{{ route('article.edit', ['slug' => $item->slug]) }}"
+                                            class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('article.destroy', ['slug' => $item->slug]) }}"
+                                            method="POST" style="display:inline-block;">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip"
+                                                title='Delete'>Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
                             @endforeach
                             <tbody>
 
