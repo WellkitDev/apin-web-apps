@@ -11,8 +11,8 @@
     <div class="widget category-widget">
         <h3>Categories</h3>
         <ul>
-            @foreach ($categories as $item)
-                <li><a href="">{{ $item->category_name }} <span>{{ $item->category_order }}</span></a></li>
+            @foreach ($subCategory as $item)
+                <li><a href="">{{ $item->subcategory_name }} <span>{{ $item->articles->count() }}</span></a></li>
             @endforeach
         </ul>
     </div>
