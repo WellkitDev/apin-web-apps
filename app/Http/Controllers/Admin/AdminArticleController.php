@@ -335,4 +335,46 @@ class AdminArticleController extends Controller
     }
 
 
+    //
+    public function show(Request $request)
+    {
+        $search = $request->input('search');
+        $category = $request->input('category');
+        $tag = $request->input('tag');
+
+        //guery artikel dengan search
+        $query = Article::query();
+
+        if ($search) {
+            $query->where(function ($q) use ($search){
+                $q->where('article_title', 'like', "%{$search}%")
+                ->orWhere('article_detail', 'like', "%{$search}%");
+            });
+        }
+
+        if ($category) {
+            $query->where('subcategory_id', $category);
+        }
+
+        if ($tag) {
+            $query->whereHas('tags', function ($q) use ($tag){
+                $q->where('tag_name', $tag);
+            });
+        }
+
+        $article_data = $query->orderBy('id', 'desc')->paginate(5);
+        $subCategory = SubCategory::all();
+        $tags = Tag::selectRaw('MIN(id) as id, tag_name')->groupBy('tag_name')->get();
+
+
+        return view('blog.artikel', compact(
+            'search',
+            'category',
+            'tags',
+            'subCategory',
+            'article_data',
+        ));
+    }
+
+
 }
