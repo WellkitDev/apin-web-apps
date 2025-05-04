@@ -43,10 +43,21 @@
                                 <tr>
                                     <th>Tille</th>
                                     <th>Image</th>
+                                    <th>SubCategory</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-
+                            @foreach ($articles as $item)
+                                <td>{{ $item->article_title }}</td>
+                                <td><img src="{{ $item->article_img }}" alt="" width="30px"></td>
+                                <td>{{ $item->subCategory->subcategory_name }}</td>
+                                <td>{{ $item->subCategory->category->category_name }}</td>
+                                <td>
+                                    <a href="{{ route('article.edit', ['slug' => $item->slug]) }}"
+                                        class="btn btn-primary">Edit</a>
+                                </td>
+                            @endforeach
                             <tbody>
 
                             </tbody>
@@ -65,7 +76,8 @@
     <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
 
     <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
+    </script>
 
     <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
