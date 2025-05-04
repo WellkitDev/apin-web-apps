@@ -152,10 +152,186 @@ class AdminArticleController extends Controller
     }
 
     //
-    public function update()
+    public function update(Request $request, string $slug)
     {
         //
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'data_images' => 'nullable|image|mimes:png,jpg,jpeg|max:5120',
+            'article_category' => 'required',
+            'is_share' => 'required',
+            'article_tags' => 'required',
+            'is_comment' => 'required',
+            'description' => 'required',
+        ]);
+
+        $articles = Article::where('slug', $slug)->firstOrFail();
+
+        $articles->subcategory_id = $request->article_category;
+        $articles->article_title = $request->title;
+        $articles->meta_share = $request->is_share;
+        $articles->meta_comment = $request->is_comment;
+
+        // Tangani slug (pastikan unik)
+        $newSlug = Str::slug($request->title);
+
+        if ($newSlug !== $articles->slug) {
+            # code...
+            $slugExists = Article::where('slug', $newSlug)
+            ->where('id', '!=', $articles->id)
+            ->exists();
+
+            if ($slugExists) {
+                $count = 1;
+                $baseSlug = $newSlug;
+
+                do {
+                    $newSlug = $baseSlug . '-' . $count++;
+                } while (Article::where('slug', $newSlug)->where('id', '!=', $articles->id)->exists());
+            }
+            $articles->slug = $newSlug;
+        }
+
+        //tangani file image jika ada update
+        if ($request->hasFile('data_images')) {
+            # code...
+            if ($articles->article_img && file_exists(public_path($articles->article_img))) {
+                # code...
+                unlink(public_path($articles->article_img));
+            }
+
+            $file = $request->file('data_images');
+
+            $finalname = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension(); // Tambah uniqid untuk unik
+            $file->move(public_path('uploads/data_images'), $finalname); // Pakai folder data_imagess
+
+            $articles->article_img = '/uploads/data_images/' . $finalname;
+        } else {
+            $articles->article_img = $articles->article_img;
+        }
+
+
+        //tangani proses update description dari summernote
+        // Handle description update from Summernote
+        $description = $request->description;
+
+        if ($description) {
+            $dom = new \DOMDocument();
+            @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+            // Get existing images from the current article content
+            $existingDom = new \DOMDocument();
+            @$existingDom->loadHTML('<?xml encoding="utf-8" ?>' . $articles->article_detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $existingImages = $existingDom->getElementsByTagName('img');
+            $existingImagePaths = [];
+            foreach ($existingImages as $img) {
+                $src = $img->getAttribute('src');
+                if (strpos($src, '/uploads/images/') === 0) {
+                    $existingImagePaths[] = $src;
+                }
+            }
+
+            // Process new images in the updated content
+            $images = $dom->getElementsByTagName('img');
+            $newImagePaths = [];
+
+            foreach ($images as $key => $img) {
+                $src = $img->getAttribute('src');
+
+                // Handle base64 images (new images)
+                if (strpos($src, 'data:image/') === 0) {
+                    $dataParts = explode(',', $src);
+
+                    if (count($dataParts) == 2) {
+                        $base64Data = $dataParts[1];
+                        $imageData = base64_decode($base64Data);
+
+                        if ($imageData !== false) {
+                            $mimeType = explode(';', explode(':', $dataParts[0])[1])[0];
+                            $extension = str_replace('image/', '', $mimeType);
+
+                            // Create unique file name
+                            $imageName = '/uploads/images/' . time() . '_' . uniqid() . '_' . $key . '.' . $extension;
+                            $imagePath = public_path($imageName);
+
+                            // Save image to folder
+                            file_put_contents($imagePath, $imageData);
+
+                            // Update src in HTML
+                            $img->setAttribute('src', $imageName);
+                            $newImagePaths[] = $imageName;
+                        }
+                    }
+                } else {
+                    // Keep track of existing images that are still in use
+                    if (strpos($src, '/uploads/images/') === 0) {
+                        $newImagePaths[] = $src;
+                    }
+                }
+            }
+
+            // Delete images that are no longer in the updated content
+            foreach ($existingImagePaths as $oldImagePath) {
+                if (!in_array($oldImagePath, $newImagePaths) && file_exists(public_path($oldImagePath))) {
+                    unlink(public_path($oldImagePath));
+                }
+            }
+
+            $articles->article_detail = $dom->saveHTML();
+        }
+
+
+        //tangani tag
+        if ($request->article_tags != '') {
+            //ambil tag yang sudah ada
+            $existingTags = Tag::where('article_id', $articles->id)->pluck('tag_name')->toArray();
+
+            //pisahkan tag baru yang diinputkan
+            $newTags = explode(',', $request->article_tags);
+            $newTags = array_map('trim', $newTags);
+            $newTags = array_unique($newTags);
+
+            //tambahkan tag yang belum ada
+            foreach ($newTags as $tagName) {
+                # code...
+                if (!in_array($tagName, $existingTags)) {
+                    $tag = new Tag();
+                    $tag->article_id = $articles->id;
+                    $tag->tag_name = $tagName;
+                    $tag->save();
+                }
+            }
+        }
+
+        $articles->save();
+
         return redirect()->back()->with('success', 'Article updated Successfully');
+    }
+
+    public function destroy(string $slug)
+    {
+        $articles = Article::where('slug', $slug)->firstOrFail();
+
+        if ($articles->article_img && file_exists(public_path($articles->article_img))) {
+            # code...
+            unlink(public_path($articles->article_img));
+        }
+
+        if ($articles->article_detail) {
+            $dom = new \DOMDocument();
+            $dom->loadHTML('<?xml encoding="utf-8" ?>' . $articles->article_detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+            $images = $dom->getElementsByTagName('img');
+
+            foreach ($images as $img) {
+                $src = $img->getAttribute('src');
+                if (strpos($src, '/uploads/images/') === 0 && file_exists(public_path($src))) {
+                    unlink(public_path($src));
+                }
+            }
+        }
+        $articles->delete();
+        return redirect()->route('article.index')->with('success', 'Record deleted has successfully');
     }
 
 
