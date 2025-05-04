@@ -62,9 +62,9 @@
                                     <li><a href="{{ url('/seminar/arsip') }}">Arsip</a></li> --}}
                                 </ul>
                             </li>
-                            <li><a href="{{ route('blog.article.index') }}">Blog</a>
+                            <li><a href="{{ route('article.show') }}">Blog</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('blog.article.index') }}">Artikel</a></li>
+                                    <li><a href="{{ route('article.show') }}">Artikel</a></li>
                                     <li><a href="{{ url('/coming-soon') }}">Gallery</a></li>
                                 </ul>
                             </li>
