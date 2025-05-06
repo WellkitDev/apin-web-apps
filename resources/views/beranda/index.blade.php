@@ -539,117 +539,40 @@
     <!--End wpo-support-section-->
 
     <!-- start of wpo-blog-section -->
-    {{-- <section class="wpo-blog-section section-padding">
+    <section class="wpo-blog-section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="wpo-section-title">
-                        <span>blog</span>
-                        <h2>Our blog Packages</h2>
+                        <span>Article</span>
+                        <h2>Layanan Artikel Blog</h2>
                     </div>
                 </div>
             </div>
             <div class="wpo-blog-items">
                 <div class="row">
-                    <div class="col col-lg-4 col-md-6 col-12">
-                        <div class="wpo-blog-item">
-                            <div class="wpo-blog-img">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-1.jpg"
-                                    alt="">
-                            </div>
-                            <div class="wpo-blog-content">
-                                <div class="wpo-blog-content-top">
-                                    <div class="wpo-blog-thumb">
-                                        <span>Business</span>
-                                    </div>
-                                    <h2><a href="blog.html">8 Mistakes First-Time Founders Make When Starting a
-                                            Business.</a></h2>
+                    @foreach ($article_data as $blog)
+                        <div class="col col-lg-4 col-md-6 col-12">
+                            <div class="wpo-blog-item">
+                                <div class="wpo-blog-img">
+                                    <img src="{{ $blog->article_img }}" alt="">
                                 </div>
-                                <div class="wpo-blog-content-btm">
-                                    <div class="wpo-blog-content-btm-left">
-                                        <div class="wpo-blog-content-btm-left-img">
-                                            <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/blog-avater/img-1.jpg"
-                                                alt="">
+                                <div class="wpo-blog-content">
+                                    <div class="wpo-blog-content-top">
+                                        <div class="wpo-blog-thumb">
+                                            <span>{{ $blog->subCategory->subcategory_name }}</span>
                                         </div>
-                                        <div class="wpo-blog-content-btm-left-text">
-                                            <h4><a href="blog.html">Konal Biry</a></h4>
-                                            <span>Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-blog-content-btm-right">
-                                        <span>14 AUG,21</span>
+                                        <h2><a
+                                                href="{{ route('article.detail', ['slug' => $blog->slug]) }}">{{ $blog->article_title }}</a>
+                                        </h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-lg-4 col-md-6 col-12">
-                        <div class="wpo-blog-item">
-                            <div class="wpo-blog-img">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-2.jpg"
-                                    alt="">
-                            </div>
-                            <div class="wpo-blog-content">
-                                <div class="wpo-blog-content-top">
-                                    <div class="wpo-blog-thumb">
-                                        <span>Consulitng</span>
-                                    </div>
-                                    <h2><a href="blog.html">3 of the Worst Ways Small Businesses Waste Money on
-                                            Marketing</a></h2>
-                                </div>
-                                <div class="wpo-blog-content-btm">
-                                    <div class="wpo-blog-content-btm-left">
-                                        <div class="wpo-blog-content-btm-left-img">
-                                            <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/blog-avater/img-2.jpg"
-                                                alt="">
-                                        </div>
-                                        <div class="wpo-blog-content-btm-left-text">
-                                            <h4><a href="blog.html">Robert Johnson</a></h4>
-                                            <span>Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-blog-content-btm-right">
-                                        <span>14 AUG,21</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-4 col-md-6 col-12">
-                        <div class="wpo-blog-item">
-                            <div class="wpo-blog-img">
-                                <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/img-3.jpg"
-                                    alt="">
-                            </div>
-                            <div class="wpo-blog-content">
-                                <div class="wpo-blog-content-top">
-                                    <div class="wpo-blog-thumb">
-                                        <span>Business</span>
-                                    </div>
-                                    <h2><a href="blog.html">Good Advice: Tips From Successful Small Business
-                                            Owners</a></h2>
-                                </div>
-                                <div class="wpo-blog-content-btm">
-                                    <div class="wpo-blog-content-btm-left">
-                                        <div class="wpo-blog-content-btm-left-img">
-                                            <img src="https://wpocean.com/html/tf/consultar-live/assets/images/blog/blog-avater/img-3.jpg"
-                                                alt="">
-                                        </div>
-                                        <div class="wpo-blog-content-btm-left-text">
-                                            <h4><a href="blog.html">Josna Bothy</a></h4>
-                                            <span>Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-blog-content-btm-right">
-                                        <span>14 AUG,21</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- end of wpo-blog-section -->
 @endsection
