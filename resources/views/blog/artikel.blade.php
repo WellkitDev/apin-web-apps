@@ -40,30 +40,18 @@
                                     </ul>
                                 </div>
                                 <div class="entry-details">
-                                    <h3><a href="#">{{ $item->article_title }}</a>
+                                    <h3><a
+                                            href="{{ route('article.detail', ['slug' => $item->slug]) }}">{{ $item->article_title }}</a>
                                     </h3>
                                     <p>{{ Str::limit(strip_tags($item->article_detail), 200) }}</p>
-                                    <a href="#" class="read-more">READ MORE...</a>
+                                    <a href="{{ route('article.detail', ['slug' => $item->slug]) }}" class="read-more">READ
+                                        MORE...</a>
                                 </div>
                             </div>
                         @endforeach
 
                         <div class="pagination-wrapper pagination-wrapper-left">
-                            <ul class="pg-pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <i class="fi ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <i class="fi ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            {{ $article_data->links('vendor.pagination.bootstrap-5') }}
                         </div>
                     </div>
                 </div>
