@@ -151,6 +151,7 @@ Route::delete('article/{slug}/delete', [AdminArticleController::class, 'destroy'
 
 //frontend blog article
 Route::get('blog/artikel', [AdminArticleController::class, 'show'])->name('article.show');
+Route::get('blog/artikel/{slug}', [AdminArticleController::class, 'detail'])->name('article.detail');
 
 
 // Frontend show page
