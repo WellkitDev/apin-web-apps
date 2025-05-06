@@ -19,36 +19,22 @@
     <div class="widget recent-post-widget">
         <h3>Related Posts</h3>
         <div class="posts">
-            <div class="post">
-                <div class="img-holder">
-                    <img src="https://wpocean.com/html/tf/consultar-live/assets/images/recent-posts/img-1.jpg" alt>
+            @foreach ($related_article as $more)
+                <div class="post">
+                    <div class="img-holder">
+                        <img src="{{ $more->article_img }}" width="90px"alt>
+                    </div>
+                    <div class="details">
+                        <h4><a
+                                href="{{ route('article.detail', ['slug' => $more->slug]) }}">{{ $more->article_title }}</a>
+                        </h4>
+                        <span class="date">{{ $more->created_at->translatedFormat('j, F Y') }} </span>
+                    </div>
                 </div>
-                <div class="details">
-                    <h4><a href="blog-single.html">Why Choose Management Consulting?</a></h4>
-                    <span class="date">19 Jun 2021 </span>
-                </div>
-            </div>
-            <div class="post">
-                <div class="img-holder">
-                    <img src="https://wpocean.com/html/tf/consultar-live/assets/images/recent-posts/img-2.jpg" alt>
-                </div>
-                <div class="details">
-                    <h4><a href="blog-single.html">Researching the Consulting Career Path</a></h4>
-                    <span class="date">22 May 2021 </span>
-                </div>
-            </div>
-            <div class="post">
-                <div class="img-holder">
-                    <img src="https://wpocean.com/html/tf/consultar-live/assets/images/recent-posts/img-3.jpg" alt>
-                </div>
-                <div class="details">
-                    <h4><a href="blog-single.html">Joining the Consulting Club During Your MBA</a></h4>
-                    <span class="date">12 Apr 2021 </span>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <div class="widget wpo-instagram-widget">
+    {{-- <div class="widget wpo-instagram-widget">
         <div class="widget-title">
             <h3>Projects</h3>
         </div>
@@ -72,25 +58,19 @@
                         src="https://wpocean.com/html/tf/consultar-live/assets/images/instragram/18.jpg"
                         alt=""></a></li>
         </ul>
-    </div>
+    </div> --}}
     <div class="widget tag-widget">
         <h3>Tags</h3>
         <ul>
-            <li><a href="#">Consulting</a></li>
-            <li><a href="#">Planning</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Strategy</a></li>
-            <li><a href="#">Finance</a></li>
-            <li><a href="#">Solution</a></li>
-            <li><a href="#">Corporate</a></li>
-            <li><a href="#">Idea</a></li>
-            <li><a href="#">Market Reserch</a></li>
+            @foreach ($tags as $tag)
+                <li><a href="#">{{ $tag->tag_name }}</a></li>
+            @endforeach
         </ul>
     </div>
     <div class="wpo-contact-widget widget">
-        <h2>How We Can <br> Help You!</h2>
-        <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis. </p>
-        <a href="contact.html">Contact Us</a>
+        <h2>Kami Siap <br> Membantu Anda!</h2>
+        <p>Kami bekerja keras untuk memberikan solusi terbaik. Kami siap membantu Anda dengan layanan yang mudah dan
+            nyaman </p>
+        <a href="{{ url('/contact') }}">Contact Us</a>
     </div>
 </div>
