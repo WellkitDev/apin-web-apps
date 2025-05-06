@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Page;
+use App\Models\Article;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,8 @@ class HomeController extends Controller
                 ->get();
         }
 
-        return view('beranda.index', compact('aboutPage', 'servicesPage', 'services'));
+        $article_data = Article::with('subCategory')->orderBy('id', 'desc')->paginate(3);
+
+        return view('beranda.index', compact('aboutPage', 'servicesPage', 'services', 'article_data'));
     }
 }
