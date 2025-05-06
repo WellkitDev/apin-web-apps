@@ -10,7 +10,7 @@
                             <span class="icon-bar middle-angle"></span>
                             <span class="icon-bar last-angle"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="{{ asset('assets/images/logo-sm.png') }}"
+                        <a class="navbar-brand" href="#"><img src="{{ asset('assets/images/logo.fe.200.png') }}"
                                 alt="apin"></a>
                     </div>
                 </div>
