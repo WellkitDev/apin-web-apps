@@ -362,10 +362,10 @@ class AdminArticleController extends Controller
             });
         }
 
-        $article_data = $query->orderBy('id', 'desc')->paginate(5);
+        $article_data = $query->orderBy('id', 'desc')->paginate(2);
         $subCategory = SubCategory::all();
         $tags = Tag::selectRaw('MIN(id) as id, tag_name')->groupBy('tag_name')->get();
-
+        $related_article = Article::with('subCategory')->orderBy('id', 'desc')->paginate(3);
 
         return view('blog.artikel', compact(
             'search',
@@ -373,6 +373,52 @@ class AdminArticleController extends Controller
             'tags',
             'subCategory',
             'article_data',
+            'related_article',
+        ));
+    }
+
+    //
+    public function detail(Request $request, string $slug)
+    {
+        $article_post = Article::with('subCategory')->where('slug', $slug)->firstOrFail();
+
+        $search = $request->input('search');
+        $category = $request->input('category');
+        $tag = $request->input('tag');
+
+        if ($search) {
+            $query->where(function ($q) use ($search){
+                $q->where('article_title', 'like', "%{$search}%")
+                ->orWhere('article_detail', 'like', "%{$search}%");
+            });
+        }
+
+        if ($category) {
+            $query->where('subcategory_id', $category);
+        }
+
+        if ($tag) {
+            $query->whereHas('tags', function ($q) use ($tag){
+                $q->where('tag_name', $tag);
+            });
+        }
+
+        $subCategory = SubCategory::all();
+
+        $tags = Tag::selectRaw('MIN(id) as id, tag_name')->groupBy('tag_name')->get();
+        $tag_article = Tag::where('article_id', $article_post->id)->get();
+
+        $related_article = Article::with('subCategory')->orderBy('id', 'desc')->where('subcategory_id', $article_post->subcategory_id)->get();
+        $new_visitors = $article_post->visitors+1;
+        $article_post->visitors = $new_visitors;
+        $article_post->save();
+
+        return view('blog.artikel-details', compact(
+            'article_post',
+            'related_article',
+            'subCategory',
+            'tags',
+            'tag_article',
         ));
     }
 
