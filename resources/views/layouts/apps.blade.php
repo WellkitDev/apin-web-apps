@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+    <meta name="description"
+        content="APIN, wadah kolaboratif untuk pengelolaan jurnal, publikasi ilmiah berkualitas, dan pengembangan kapasitas akademik di Indonesia, mendukung riset nasional dan internasional.">
+    <meta name="author" content="Asosiasi Peneliti dan Inovasi Nusantara (APIN)">
+    <meta name="keywords"
+        content="APIN, pengelolaan jurnal, publikasi ilmiah, penelitian Indonesia, kapasitas akademik, riset nasional, riset internasional, jurnal ilmiah, kolaborasi peneliti, inovasi akademik, asosiasi peneliti, pengembangan riset, editorial jurnal, indeksasi jurnal, akademisi Indonesia">
 
     <title>APIN - Penelitinusantara.com</title>
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}">
+    {{-- <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}"> --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}" sizes="16x16 32x32">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon.png') }}" sizes="180x180">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}" sizes="192x192">
 
     <!-- plugin css -->
 
