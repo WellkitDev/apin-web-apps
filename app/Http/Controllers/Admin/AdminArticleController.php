@@ -49,11 +49,12 @@ class AdminArticleController extends Controller
         $article_id = $showPost[0]->Auto_increment;
 
         // Simpan gambar utama (jika ada)
+        $data_images_path = null;
         if ($request->hasFile('data_images')) {
                 $file = $request->file('data_images');
                 $finalname = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension(); // Tambah uniqid untuk unik
                 $file->move(public_path('uploads/data_images'), $finalname); // Pakai folder data_imagess
-                $request->data_images = '/uploads/data_images/' . $finalname;
+                $data_images_path = '/uploads/data_images/' . $finalname;
         }
 
         //proses keyword atau tag array
@@ -83,12 +84,11 @@ class AdminArticleController extends Controller
         // 'visitors',
         // 'author_id',
         // 'meta_share',
-        // 'meta_comment',
         $articles = new Article();
         $articles->subcategory_id = $request->article_category;
         $articles->article_title = $request->title;
         $articles->slug = Str::slug($request->title);
-        $articles->article_img = $request->data_images;
+        $articles->article_img = $data_images_path;
         $articles->visitors = 1;
         $articles->author_id = 0;
         $articles->meta_share = $request->is_share;
@@ -385,6 +385,7 @@ class AdminArticleController extends Controller
         $search = $request->input('search');
         $category = $request->input('category');
         $tag = $request->input('tag');
+        $query = Article::query();
 
         if ($search) {
             $query->where(function ($q) use ($search){
