@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Article;
+use App\Models\PageItem;
 
 class HomeController extends Controller
 {
