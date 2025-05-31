@@ -8,6 +8,9 @@ use App\Http\Controllers\Admin\AdminSubCategoryController;
 use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogArticleController;
+use App\Http\Controllers\BookController;
+use App\Models\Book;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -148,6 +151,9 @@ Route::post('article/create', [AdminArticleController::class, 'store'])->name('a
 Route::get('article/{slug}', [AdminArticleController::class, 'edit'])->name('article.edit');
 Route::post('article/{slug}', [AdminArticleController::class, 'update'])->name('article.update');
 Route::delete('article/{slug}/delete', [AdminArticleController::class, 'destroy'])->name('article.destroy');
+
+//backend BookController
+Route::resource('books', BookController::class);
 
 //frontend blog article
 Route::get('blog/artikel', [AdminArticleController::class, 'show'])->name('article.show');
