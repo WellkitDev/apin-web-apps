@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogArticleController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\FrontendPageController;
 use App\Models\Book;
 
 
@@ -154,6 +155,9 @@ Route::delete('article/{slug}/delete', [AdminArticleController::class, 'destroy'
 
 //backend BookController
 Route::resource('books', BookController::class);
+
+//frontend Book
+Route::get('buku', [FrontendPageController::class, 'pageBook'])->name('buku.show');
 
 //frontend blog article
 Route::get('blog/artikel', [AdminArticleController::class, 'show'])->name('article.show');
