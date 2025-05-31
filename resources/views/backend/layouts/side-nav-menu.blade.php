@@ -97,6 +97,29 @@
                 </div>
             </li>
 
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarBooks" aria-expanded="false" aria-controls="sidebarBooks"
+                    class="side-nav-link">
+                    <span class="menu-icon"><i class="mdi mdi-book-multiple"></i></span>
+                    <span class="menu-text"> Books </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarBooks">
+                    <ul class="sub-menu">
+                        <li class="side-nav-item">
+                            <a href="{{ route('books.index') }}" class="side-nav-link">
+                                <span class="menu-text">List Books</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="{{ route('subcategory.index') }}" class="side-nav-link">
+                                <span class="menu-text">Create Books</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false"
