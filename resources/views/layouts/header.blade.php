@@ -74,7 +74,7 @@
                                     <li><a href="{{ url('/blog/gallery') }}">Gallery</a></li>
                                 </ul>
                             </li> --}}
-                            <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
+                            <li><a href="{{ route('buku.show') }}">Buku</a></li>
                             <li><a href="{{ url('https://apinusa.com/') }}" target="_blank">Jurnal</a></li>
                             <li><a href="{{ url('/coming-soon') }}">Anggota</a></li>
                         </ul>
@@ -136,7 +136,7 @@
                                     <li><a href="{{ url('/blog/gallery') }}">Gallery</a></li>
                                 </ul>
                             </li> --}}
-                                <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
+                                <li><a href="{{ route('buku.show') }}">Buku</a></li>
                                 <li><a href="{{ url('https://apinusa.com/') }}" target="_blank">Jurnal</a></li>
                                 <li><a href="{{ url('/coming-soon') }}">Anggota</a></li>
                             </ul>
