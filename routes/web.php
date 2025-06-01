@@ -158,6 +158,7 @@ Route::resource('books', BookController::class);
 
 //frontend Book
 Route::get('buku', [FrontendPageController::class, 'pageBook'])->name('buku.show');
+Route::get('buku/{slug}', [FrontendPageController::class, 'bookDetail'])->name('buku.detail');
 
 //frontend blog article
 Route::get('blog/artikel', [AdminArticleController::class, 'show'])->name('article.show');
