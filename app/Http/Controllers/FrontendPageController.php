@@ -10,7 +10,7 @@ class FrontendPageController extends Controller
     //
     public function pageBook()
     {
-        $books = Book::all();
+        $books = Book::paginate(10);
         return view('book.show', compact('books'));
     }
 
