@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('link_google_books')->nullable();
             $table->string('halaman')->nullable();
             $table->string('author')->nullable();
-            $table->string('description');
+            $table->string('description'); //please modif string to longtext
             $table->string('publish_date')->nullable();
             $table->string('amout')->nullable();
             $table->timestamps();
