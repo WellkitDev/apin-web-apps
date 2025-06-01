@@ -33,7 +33,7 @@ class BookController extends Controller
             'halaman' => 'numeric',
             'publish_date' => 'date',
             'author' => 'string|max:225',
-            'description' => 'string|min:10|max:500',
+            'description' => 'string|min:10',
         ],[
             // 'description.regex' => 'Description can only contain letters, numbers, and spaces.',
             'google.url' => 'Please enter a valid URL (e.g., https://example.com).',
@@ -87,7 +87,7 @@ class BookController extends Controller
             'halaman' => 'numeric',
             'publish_date' => 'date',
             'author' => 'string|max:225',
-            'description' => 'string|min:10|max:500',
+            'description' => 'string|min:10',
         ],[
             // 'description.regex' => 'Description can only contain letters, numbers, and spaces.',
             'google.url' => 'Please enter a valid URL (e.g., https://example.com).',
