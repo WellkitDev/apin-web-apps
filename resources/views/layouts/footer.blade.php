@@ -7,7 +7,9 @@
                         <div class="logo widget-title">
                             <img src="{{ asset('assets/images/logo-white-180.png') }}" alt="blog">
                         </div>
-                        <p>Asosiasi Peneliti dan Inovasi Nusantara (APIN) didirikan sebagai wadah kolaboratif yang bertujuan untuk mendukung publikasi ilmiah serta pengembangan kapasitas akademik di Indonesia.</p>
+                        <p>Asosiasi Peneliti dan Inovasi Nusantara (APIN) didirikan sebagai wadah kolaboratif yang
+                            bertujuan untuk mendukung publikasi ilmiah serta pengembangan kapasitas akademik di
+                            Indonesia.</p>
                         <ul>
                             <li>
                                 <a href="#">
@@ -39,10 +41,10 @@
                         </div>
                         <div class="contact-ft">
                             <ul>
-                                <li><i class="fi flaticon-location"></i>7 Green Lake Street Crawfordsville, IN
-                                    47933</li>
-                                <li><i class="fi flaticon-phone-call"></i>+1 800 123 456 789</li>
-                                <li><i class="fi flaticon-send"></i>Consultar@gmail.com</li>
+                                <li><i class="fi flaticon-location"></i>lrg. Baitul Muslim RT 039 RW 000 Simpang III
+                                    Sipin, Kota Baru, Kota Jambi Jambi, 36126, Indonesia</li>
+                                <li><i class="fi flaticon-phone-call"></i>+62 811 7455 211</li>
+                                <li><i class="fi flaticon-send"></i>Apin.offcl@gmail.com</li>
                             </ul>
                         </div>
                     </div>
@@ -69,7 +71,7 @@
                                     @endforeach
                                     <li><a href="{{ url('/contact') }}">Contact US</a></li>
                                 </ul>
-                                
+
                             @endif
                         @endif
                     </div>
