@@ -28,13 +28,15 @@
                                 <tbody>
                                     <tr>
                                         <td style="padding: 15px" width="150">
-                                            <a href="">
+                                            <a href="{{ route('buku.detail', ['slug' => $item->slug]) }}">
                                                 <img src="{{ asset($item->cover) }}" alt="" width="200px">
                                             </a>
                                         </td>
                                         <td style="padding: 15px">
                                             <div class="col-md-10 text-left">
-                                                <h4><a href="">{{ $item->title }}</a></h4>
+                                                <h4><a
+                                                        href="{{ route('buku.detail', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
+                                                </h4>
                                                 <p>ISBN: <b>{{ $item->isbn != null ? $item->isbn : '-' }}</b></p>
                                                 <p>Deskripsi:</p>
                                                 <p>
