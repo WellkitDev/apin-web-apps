@@ -53,7 +53,10 @@
                     </div>
                 @endforeach
             </div>
-
+            <!-- Menampilkan link pagination -->
+            <div>
+                {{ $books->links() }}
+            </div>
         </div>
     </section>
 @endsection
